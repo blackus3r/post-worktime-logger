@@ -1,0 +1,10 @@
+.pwl-button {
+    margin-top: 5px !important;
+}
+
+#pwl-reset-button{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color:#fff;
+    margin-left: 5px;
+}

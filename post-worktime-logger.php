@@ -98,7 +98,10 @@ function pwlRenderMetaBoxSummary()
                 $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
                 $content .= pwlSecondsToHumanReadableTime($worktime);
                 $content .= '</span><br />';
-                $content .= '<button class="button button-small" id="pwl-clear-button">'.__("Clear").'</button>';
+                $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause").'</button>';
+                $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-play-button">'.__("Play").'</button>';
+                $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset").'</button>';
+
             }
         }
     }
@@ -123,7 +126,7 @@ function pwlAddMetaBoxSummary()
 /**
  * Clear the work time.
  */
-function pwlHandleWorktimeClear()
+function pwlHandleWorktimeReset()
 {
     $postId = $_POST['currentPostId'];
 
@@ -144,7 +147,7 @@ add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
 //Register Ajax Ping from frontend
 add_action( 'wp_ajax_worktime_ping', 'pwlHandleWorktimePing');
-add_action( 'wp_ajax_worktime_clear', 'pwlHandleWorktimeClear');
+add_action( 'wp_ajax_worktime_reset', 'pwlHandleWorktimeReset');
 
 //Load language
 load_plugin_textdomain( 'post-worktime-logger', false, plugins_url('/lang/', __FILE__));
@@ -154,5 +157,6 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	if ($hook=="post.php")
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
+		wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
 	}
 });
