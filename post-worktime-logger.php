@@ -98,6 +98,8 @@ function pwlRenderMetaBoxSummary()
                 $content .= '<span id="serverWorktime">';
                 $content .= __("Total worktime", "post-worktime-logger").": ".pwlSecondsToHumanReadableTime($worktime);
                 $content .= '</span><br />';
+                $content .= '<button class="button button-small" id="pwl-pause-button">'.__("Pause").'</button>';
+                $content .= '<button class="button button-small" style="display:none;" id="pwl-play-button">'.__("Play").'</button>';
             }
         }
     }

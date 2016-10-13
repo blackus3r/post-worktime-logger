@@ -10,6 +10,9 @@ var frontendTime = 0;
 var frontendTimeBuffer = 0;
 var lastMouseMove;
 var frontendWorktTimeTextAreaField;
+var playButton;
+var pauseButton;
+var enablePause = false;
 
 jQuery(document).ready(function () {
 
@@ -69,7 +72,7 @@ jQuery(document).ready(function () {
         var currentTime = new Date;
         var lastActivity = Math.round((currentTime.getTime() - lastMouseMove.getTime())/1000);
 
-        if (lastActivity<60*5)
+        if (lastActivity<60*5 && !enablePause)
         {
             return true;
         }
@@ -93,6 +96,23 @@ jQuery(document).ready(function () {
     frontendTimeContainer = jQuery("#frontendTime");
     frontendWorktTimeTextAreaField = jQuery('input[value="post-worktime"]').parent().parent().find("textarea");
     frontendTime = frontendTimeContainer.html();
+
+    playButton = jQuery("#pwl-play-button");
+    pauseButton = jQuery("#pwl-pause-button");
+
+    playButton.click(function (_event) {
+        _event.preventDefault();
+        enablePause = false;
+        playButton.toggle();
+        pauseButton.toggle();
+    });
+
+    pauseButton.click(function (_event) {
+        _event.preventDefault();
+        enablePause = true;
+        pauseButton.toggle();
+        playButton.toggle();
+    });
 
     lastMouseMove = new Date();
     jQuery(document).mousemove(function() {
