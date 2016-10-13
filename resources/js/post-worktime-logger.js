@@ -10,6 +10,8 @@ var frontendTime = 0;
 var frontendTimeBuffer = 0;
 var lastMouseMove;
 var frontendWorktTimeTextAreaField;
+var clearButton;
+var serverWorktimeContainer;
 
 jQuery(document).ready(function () {
 
@@ -91,8 +93,23 @@ jQuery(document).ready(function () {
 
     currentPostId = jQuery("#post-worktime-logger-current-post-id").html();
     frontendTimeContainer = jQuery("#frontendTime");
+    serverWorktimeContainer = jQuery("#serverWorktime");
     frontendWorktTimeTextAreaField = jQuery('input[value="post-worktime"]').parent().parent().find("textarea");
     frontendTime = frontendTimeContainer.html();
+
+    clearButton = jQuery("#pwl-clear-button");
+    clearButton.click(function (_event) {
+        _event.preventDefault();
+        frontendWorktTimeTextAreaField.val(0);
+        serverWorktimeContainer.html("00:00:00");
+        jQuery.post(
+            ajaxurl,
+            {
+                "currentPostId": currentPostId,
+                "action": "worktime_clear"
+            }
+        );
+    });
 
     lastMouseMove = new Date();
     jQuery(document).mousemove(function() {

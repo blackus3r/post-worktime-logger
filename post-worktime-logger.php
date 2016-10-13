@@ -95,9 +95,10 @@ function pwlRenderMetaBoxSummary()
 
                 $content .= __('Current worktime', "post-worktime-logger").': <span id="frontendTime">0</span><br />';
 
-                $content .= '<span id="serverWorktime">';
-                $content .= __("Total worktime", "post-worktime-logger").": ".pwlSecondsToHumanReadableTime($worktime);
+                $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
+                $content .= pwlSecondsToHumanReadableTime($worktime);
                 $content .= '</span><br />';
+                $content .= '<button class="button button-small" id="pwl-clear-button">'.__("Clear").'</button>';
             }
         }
     }
@@ -119,11 +120,31 @@ function pwlAddMetaBoxSummary()
     );
 }
 
+/**
+ * Clear the work time.
+ */
+function pwlHandleWorktimeClear()
+{
+    $postId = $_POST['currentPostId'];
+
+    if (is_numeric($postId))
+    {
+        $post = get_post($postId);
+
+        if ($post)
+        {
+            update_post_meta($postId, "post-worktime", 0);
+        }
+    }
+    update_option("post-worktime-logger-last-ping-timestamp", time());
+}
+
 //Register post meta box
 add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
 //Register Ajax Ping from frontend
 add_action( 'wp_ajax_worktime_ping', 'pwlHandleWorktimePing');
+add_action( 'wp_ajax_worktime_clear', 'pwlHandleWorktimeClear');
 
 //Load language
 load_plugin_textdomain( 'post-worktime-logger', false, plugins_url('/lang/', __FILE__));
