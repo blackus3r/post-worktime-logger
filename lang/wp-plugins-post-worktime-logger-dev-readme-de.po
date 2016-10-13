@@ -1,0 +1,54 @@
+# Translation of Plugins - post-worktime-logger - Development Readme (trunk) in German
+# This file is distributed under the same license as the Plugins - post-worktime-logger - Development Readme (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: +0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - post-worktime-logger - Development Readme (trunk)\n"
+
+#. Short description.
+msgid "Post Worktime Logger is a tool to track the time you worked on each post."
+msgstr ""
+
+#. Name.
+msgid "Post Worktime Logger"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Post Worktime Logger is now tracking your working tim for each post."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload <code>/post-worktime-logger/</code> to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Do you ever wanted to know, how long did you worked on this post?\n"
+"Let Post Worktime Logger fill this gap!"
+msgstr ""
+
+#. Found in description list item.
+msgid "Checks activity and only updates working time, if you really worked on the current post."
+msgstr ""
+
+#. Found in description list item.
+msgid "Tracks the working time for each post."
+msgstr ""
+
+#. Screenshot description.
+msgid "This is the meta box right to the post editor."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "First Version"
+msgstr ""
