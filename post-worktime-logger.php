@@ -98,6 +98,8 @@ function pwlRenderMetaBoxSummary()
                 $content .= '<span id="serverWorktime">';
                 $content .= __("Total worktime", "post-worktime-logger").": ".pwlSecondsToHumanReadableTime($worktime);
                 $content .= '</span><br />';
+                $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause").'</button>';
+                $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-play-button">'.__("Play").'</button>';
             }
         }
     }
@@ -133,5 +135,6 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	if ($hook=="post.php")
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
+		wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
 	}
 });
