@@ -9,7 +9,7 @@
 Plugin Name: Post Worktime Logger
 Plugin URI: https://wordpress.org/plugins/post-worktime-logger/
 Description: A plugin to track the worktime for each post.
-Version: 1.0
+Version: 1.0.0
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
 License: GPLv2 or later
@@ -95,9 +95,13 @@ function pwlRenderMetaBoxSummary()
 
                 $content .= __('Current worktime', "post-worktime-logger").': <span id="frontendTime">0</span><br />';
 
-                $content .= '<span id="serverWorktime">';
-                $content .= __("Total worktime", "post-worktime-logger").": ".pwlSecondsToHumanReadableTime($worktime);
+                $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
+                $content .= pwlSecondsToHumanReadableTime($worktime);
                 $content .= '</span><br />';
+                $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause").'</button>';
+                $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-play-button">'.__("Play").'</button>';
+                $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset").'</button>';
+
             }
         }
     }
@@ -154,6 +158,7 @@ function pwlWorktimeColumnRenderer($_column, $post_id)
  * Makes our column sortable.
  *
  * @param $_sortableColumns
+ * @return array
  */
 function pwlSortableColumn( $_sortableColumns )
 {
@@ -170,15 +175,34 @@ function pwlSortableColumn( $_sortableColumns )
  */
 function pwlWorktimeOrderBy( $_vars )
 {
-    if ( isset( $_vars['orderby'] ) && 'post-worktime' == $_vars['orderby'] )
-    {
-        $_vars = array_merge( $_vars, array(
+    if (isset($_vars['orderby']) && 'post-worktime' == $_vars['orderby']) {
+        $_vars = array_merge($_vars, array(
             'meta_key' => 'post-worktime',
             'orderby' => 'meta_value_num'
-        ) );
+        ));
     }
 
     return $_vars;
+
+}
+
+/**
+ * Clear the work time.
+ */
+function pwlHandleWorktimeReset()
+{
+    $postId = $_POST['currentPostId'];
+
+    if (is_numeric($postId))
+    {
+        $post = get_post($postId);
+
+        if ($post)
+        {
+            update_post_meta($postId, "post-worktime", 0);
+        }
+    }
+    update_option("post-worktime-logger-last-ping-timestamp", time());
 }
 
 //Register post meta box
@@ -186,6 +210,7 @@ add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
 //Register Ajax Ping from frontend
 add_action( 'wp_ajax_worktime_ping', 'pwlHandleWorktimePing');
+add_action( 'wp_ajax_worktime_reset', 'pwlHandleWorktimeReset');
 
 //Load language
 load_plugin_textdomain( 'post-worktime-logger', false, plugins_url('/lang/', __FILE__));
@@ -195,6 +220,7 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	if ($hook=="post.php")
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
+		wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
 	}
 });
 

@@ -10,6 +10,11 @@ var frontendTime = 0;
 var frontendTimeBuffer = 0;
 var lastMouseMove;
 var frontendWorktTimeTextAreaField;
+var resetButton;
+var serverWorktimeContainer;
+var playButton;
+var pauseButton;
+var enablePause = false;
 
 jQuery(document).ready(function () {
 
@@ -69,7 +74,7 @@ jQuery(document).ready(function () {
         var currentTime = new Date;
         var lastActivity = Math.round((currentTime.getTime() - lastMouseMove.getTime())/1000);
 
-        if (lastActivity<60*5)
+        if (lastActivity<60*5 && !enablePause)
         {
             return true;
         }
@@ -91,8 +96,40 @@ jQuery(document).ready(function () {
 
     currentPostId = jQuery("#post-worktime-logger-current-post-id").html();
     frontendTimeContainer = jQuery("#frontendTime");
+    serverWorktimeContainer = jQuery("#serverWorktime");
     frontendWorktTimeTextAreaField = jQuery('input[value="post-worktime"]').parent().parent().find("textarea");
     frontendTime = frontendTimeContainer.html();
+
+    resetButton = jQuery("#pwl-reset-button");
+    resetButton.click(function (_event) {
+        _event.preventDefault();
+        frontendWorktTimeTextAreaField.val(0);
+        serverWorktimeContainer.html("00:00:00");
+        jQuery.post(
+            ajaxurl,
+            {
+                "currentPostId": currentPostId,
+                "action": "worktime_reset"
+            }
+        );
+    });
+
+    playButton = jQuery("#pwl-play-button");
+    pauseButton = jQuery("#pwl-pause-button");
+
+    playButton.click(function (_event) {
+        _event.preventDefault();
+        enablePause = false;
+        playButton.toggle();
+        pauseButton.toggle();
+    });
+
+    pauseButton.click(function (_event) {
+        _event.preventDefault();
+        enablePause = true;
+        pauseButton.toggle();
+        playButton.toggle();
+    });
 
     lastMouseMove = new Date();
     jQuery(document).mousemove(function() {
