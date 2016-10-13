@@ -119,6 +119,68 @@ function pwlAddMetaBoxSummary()
     );
 }
 
+/**
+ * Creates the column header.
+ *
+ * @param $_columns
+ * @return array
+ */
+function pwPostsPageHeader($_columns)
+{
+    return array_merge( $_columns,
+        array('pwlworktimecolumn' => __('Worktime')) );
+}
+
+/**
+ * Renders the worktime of the current post.
+ * @param $_column
+ * @param $post_id
+ */
+function pwlWorktimeColumnRenderer($_column, $post_id)
+{
+    if ($_column == "pwlworktimecolumn")
+    {
+        $worktime = get_post_meta($post_id, "post-worktime", true);
+
+        if ($worktime)
+        {
+            echo pwlSecondsToHumanReadableTime($worktime);
+        }
+        else echo "00:00:00";
+    }
+}
+
+/**
+ * Makes our column sortable.
+ *
+ * @param $_sortableColumns
+ */
+function pwlSortableColumn( $_sortableColumns )
+{
+    $_sortableColumns[ 'pwlworktimecolumn' ] = 'post-worktime';
+
+    return $_sortableColumns;
+}
+
+/**
+ * Sorting function.
+ *
+ * @param $_vars
+ * @return array
+ */
+function pwlWorktimeOrderBy( $_vars )
+{
+    if ( isset( $_vars['orderby'] ) && 'post-worktime' == $_vars['orderby'] )
+    {
+        $_vars = array_merge( $_vars, array(
+            'meta_key' => 'post-worktime',
+            'orderby' => 'meta_value_num'
+        ) );
+    }
+
+    return $_vars;
+}
+
 //Register post meta box
 add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
@@ -135,3 +197,10 @@ add_action("admin_enqueue_scripts", function ($hook) {
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
 	}
 });
+
+add_filter( 'request', 'pwlWorktimeOrderBy' );
+add_filter( 'manage_edit-post_sortable_columns', 'pwlSortableColumn' );
+// For registering the column
+add_filter( 'manage_posts_columns', 'pwPostsPageHeader' );
+// For rendering the column
+add_action( 'manage_posts_custom_column', 'pwlWorktimeColumnRenderer', 10, 2 );
