@@ -1,0 +1,48 @@
+# Translation of Plugins - Post Worktime Logger - Development (trunk) in Albanian
+# This file is distributed under the same license as the Plugins - Post Worktime Logger - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-10-11 16:52:53+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: sq_AL\n"
+"Project-Id-Version: Plugins - Post Worktime Logger - Development (trunk)\n"
+
+#. Author URI of the plugin/theme
+msgid "https://profiles.wordpress.org/filme-blog/"
+msgstr "https://profiles.wordpress.org/filme-blog/"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/post-worktime-logger/"
+msgstr "https://wordpress.org/plugins/post-worktime-logger/"
+
+#. Author of the plugin/theme
+msgid "Patrick Hausmann"
+msgstr "Patrick Hausmann"
+
+#. Description of the plugin/theme
+msgid "A plugin to track the worktime for each post."
+msgstr "Një shtojcë për të ndjekur sa kohë punoni mbi çdo postim."
+
+#. Plugin Name of the plugin/theme
+msgid "Post Worktime Logger"
+msgstr "Regjistrues Kohe Pune Mbi Postimin"
+
+#: post-worktime-logger.php:117
+msgid "Post Worktime"
+msgstr "Kohë Pune Mbi Postimin"
+
+#: post-worktime-logger.php:104
+msgid "You have to save the post, before we can track the time."
+msgstr "Duhet ta ruani postimin, përpara se të mund të ndjekim kohën."
+
+#: post-worktime-logger.php:99
+msgid "Total worktime"
+msgstr "Kohë pune gjithsej"
+
+#: post-worktime-logger.php:96
+msgid "Current worktime"
+msgstr "Kohë pune e tanishme"

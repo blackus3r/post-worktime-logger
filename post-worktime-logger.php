@@ -9,7 +9,7 @@
 Plugin Name: Post Worktime Logger
 Plugin URI: https://wordpress.org/plugins/post-worktime-logger/
 Description: A plugin to track the worktime for each post.
-Version: 1.0.0
+Version: 1.1.0
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
 License: GPLv2 or later
@@ -98,9 +98,9 @@ function pwlRenderMetaBoxSummary()
                 $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
                 $content .= pwlSecondsToHumanReadableTime($worktime);
                 $content .= '</span><br />';
-                $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause").'</button>';
-                $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-play-button">'.__("Play").'</button>';
-                $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset").'</button>';
+                $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", "post-worktime-logger").'</button>';
+                $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", "post-worktime-logger").'</button>';
+                $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", "post-worktime-logger").'</button>';
 
             }
         }
@@ -132,7 +132,7 @@ function pwlAddMetaBoxSummary()
 function pwPostsPageHeader($_columns)
 {
     return array_merge( $_columns,
-        array('pwlworktimecolumn' => __('Worktime')) );
+        array('pwlworktimecolumn' => __('Worktime', "post-worktime-logger")) );
 }
 
 /**
@@ -183,7 +183,6 @@ function pwlWorktimeOrderBy( $_vars )
     }
 
     return $_vars;
-
 }
 
 /**

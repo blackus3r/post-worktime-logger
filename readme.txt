@@ -4,7 +4,7 @@ Donate link:
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
-Stable tag: 1.0
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,9 +28,15 @@ Let Post Worktime Logger fill this gap!
 == Screenshots ==
 
 1. This is the meta box right to the post editor.
+1. This is the posts page.
 
 == Changelog ==
 
-= 1.0 =
+= 1.1.0 =
+* Implemented support to pause and resume the tracking of the work time.
+* Implemented support to reset the working time of a post.
+* Implemented support for a sortable column on posts page, which displays the total worktime for each post.
+
+= 1.0.0 =
 * First Version
 

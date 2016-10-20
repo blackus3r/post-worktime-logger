@@ -12,7 +12,7 @@ var lastMouseMove;
 var frontendWorktTimeTextAreaField;
 var resetButton;
 var serverWorktimeContainer;
-var playButton;
+var resumeButton;
 var pauseButton;
 var enablePause = false;
 
@@ -114,13 +114,13 @@ jQuery(document).ready(function () {
         );
     });
 
-    playButton = jQuery("#pwl-play-button");
+    resumeButton = jQuery("#pwl-resume-button");
     pauseButton = jQuery("#pwl-pause-button");
 
-    playButton.click(function (_event) {
+    resumeButton.click(function (_event) {
         _event.preventDefault();
         enablePause = false;
-        playButton.toggle();
+        resumeButton.toggle();
         pauseButton.toggle();
     });
 
@@ -128,7 +128,7 @@ jQuery(document).ready(function () {
         _event.preventDefault();
         enablePause = true;
         pauseButton.toggle();
-        playButton.toggle();
+        resumeButton.toggle();
     });
 
     lastMouseMove = new Date();
