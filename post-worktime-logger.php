@@ -229,8 +229,19 @@ add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 add_action( 'wp_ajax_worktime_ping', 'pwlHandleWorktimePing');
 add_action( 'wp_ajax_worktime_reset', 'pwlHandleWorktimeReset');
 
-//Load language
-load_plugin_textdomain( 'post-worktime-logger', false, plugins_url('/lang/', __FILE__));
+
+add_action( 'init', function () {
+    $domain = 'post-worktime-logger';
+    $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+    if ( $loaded = load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' ) )
+    {
+        return $loaded;
+    }
+    else
+    {
+        load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/lang/' );
+    }
+} );
 
 //Register admin javascript file
 add_action("admin_enqueue_scripts", function ($hook) {

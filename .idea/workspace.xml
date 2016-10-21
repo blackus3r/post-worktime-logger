@@ -24,12 +24,11 @@
       <file leaf-file-name="post-worktime-logger.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/post-worktime-logger.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1830">
-              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="251">
+              <caret line="239" column="8" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
               <folding>
-                <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-                <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-                <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+                <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+                <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
               </folding>
             </state>
           </provider>
@@ -38,8 +37,8 @@
       <file leaf-file-name="post-worktime-logger.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/post-worktime-logger.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+            <state relative-caret-position="1545">
+              <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -90,7 +89,6 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="732" />
@@ -123,140 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress_blank" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress_blank" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress_blank" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress_blank" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress_blank" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress_blank" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="post-worktime-logger" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -355,6 +219,40 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post-worktime-logger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post-worktime-logger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post-worktime-logger" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post-worktime-logger" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="post-worktime-logger" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
     </panes>
   </component>
@@ -432,6 +330,7 @@
       <option name="presentableId" value="Default" />
       <updated>1476346315894</updated>
       <workItem from="1476379803101" duration="447000" />
+      <workItem from="1477088372336" duration="615000" />
     </task>
     <task id="LOCAL-00001" summary="Added a column worktime to posts page and made it sortable. &#10;WIP:&#10;- translation&#10;- changelog&#10;- documentation">
       <created>1476347788571</created>
@@ -465,18 +364,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="530000" />
+    <option name="totallyTimeSpent" value="1145000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1280" height="732" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="732" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26655897" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27059773" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28664497" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -487,6 +385,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28664497" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -519,9 +418,8 @@
         <state relative-caret-position="0">
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -538,10 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding>
-            <marker date="1369249720000" expanded="true" signature="2091:2201" ph="..." />
-            <marker date="1369249720000" expanded="true" signature="2101:2192" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -558,9 +452,8 @@
         <state relative-caret-position="203">
           <caret line="128" column="31" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -577,10 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1369249720000" expanded="true" signature="2091:2201" ph="..." />
-            <marker date="1369249720000" expanded="true" signature="2101:2192" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -604,9 +493,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -631,9 +519,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -657,17 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <marker date="1467801630000" expanded="true" signature="2747:2817" ph="SELECT optio... wp_options" />
-            <marker date="1467801630000" expanded="true" signature="3533:3603" ph="SELECT optio... wp_options" />
-            <marker date="1467801630000" expanded="true" signature="5784:5859" ph="SELECT optio... wp_options" />
-            <marker date="1467801630000" expanded="true" signature="5906:5944" ph="SELECT optio... wp_options" />
-            <marker date="1467801630000" expanded="true" signature="7126:7228" ph="SELECT meta_... wp_sitemeta" />
-            <marker date="1467801630000" expanded="true" signature="14697:14925" ph="INSERT INTO `wp_options`... " />
-            <marker date="1467801630000" expanded="true" signature="16741:16799" ph="SELECT autol... wp_options" />
-            <marker date="1467801630000" expanded="true" signature="36201:36276" ph="SELECT meta_... wp_sitemeta" />
-            <marker date="1467801630000" expanded="true" signature="41828:41902" ph="SELECT meta_... $" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,48 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="90" selection-end-column="52" />
-          <folding>
-            <marker date="1397742746000" expanded="true" signature="7384:7400" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="7423:7453" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="7701:7717" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="7774:7778" ph="&gt;" />
-            <marker date="1397742746000" expanded="true" signature="7871:7882" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="8027:8043" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="8101:8105" ph="&gt;" />
-            <marker date="1397742746000" expanded="true" signature="8199:8210" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="8320:8336" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="8453:8464" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="64288:64336" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="64461:64509" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="64640:64688" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="64783:64807" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="64838:64878" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="64918:64935" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="175978:175984" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="177036:177042" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="177048:177054" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="212602:212613" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="214451:214462" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="215282:215288" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="215291:215297" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="215535:215541" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="215544:215550" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="217803:217829" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="217831:217837" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="218015:218041" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="218043:218049" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="218404:218430" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="218432:218438" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="218730:218756" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="218758:218764" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="218948:218974" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="218976:218982" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="219063:219069" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="219147:219173" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="219175:219181" ph=" " />
-            <marker date="1397742746000" expanded="true" signature="235938:235982" ph="..." />
-            <marker date="1397742746000" expanded="true" signature="236165:236209" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="681" column="9" selection-start-line="681" selection-start-column="9" selection-end-line="681" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1432481186000" expanded="true" signature="1170:1240" ph="SELECT optio... wp_options" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -814,41 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="1681" column="9" selection-start-line="1681" selection-start-column="9" selection-end-line="1681" selection-end-column="9" />
-          <folding>
-            <marker date="1471281510000" expanded="true" signature="53025:53041" ph="Insert into post... " />
-            <marker date="1471281510000" expanded="true" signature="53051:53067" ph="Insert into page... " />
-            <marker date="1471281510000" expanded="true" signature="78775:78859" ph="SELECT post_... $" />
-            <marker date="1471281510000" expanded="true" signature="80795:80946" ph="SELECT post_... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="81116:81209" ph="SELECT COUNT... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="86937:86977" ph="SELECT * FRO... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="88384:88452" ph="SELECT * FRO... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="88777:88854" ph="SELECT ID FR... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="89306:89371" ph="SELECT comme... wp_comments" />
-            <marker date="1471281510000" expanded="true" signature="89564:89618" ph="SELECT meta_... wp_postmeta" />
-            <marker date="1471281510000" expanded="true" signature="94206:94289" ph="SELECT comme... wp_comments" />
-            <marker date="1471281510000" expanded="true" signature="96211:96294" ph="UPDATE wp_co... " />
-            <marker date="1471281510000" expanded="true" signature="116000:116041" ph="SELECT ID FR... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="127575:127651" ph="SELECT post_... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="128724:128859" ph="SELECT post_... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="129977:130072" ph="SELECT post_... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="140441:140486" ph="SELECT pinge... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="142011:142056" ph="SELECT pinge... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="142627:142673" ph="SELECT to_pi... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="144106:144158" ph="SELECT ID FR... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="146619:146759" ph="SELECT ID, p... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="148449:148547" ph="SELECT ID FR... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="148608:148685" ph="SELECT ID FR... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="160792:160850" ph="SELECT * FRO... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="164970:165010" ph="SELECT * FRO... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="166128:166193" ph="SELECT comme... wp_comments" />
-            <marker date="1471281510000" expanded="true" signature="166387:166441" ph="SELECT meta_... wp_postmeta" />
-            <marker date="1471281510000" expanded="true" signature="167012:167131" ph="SELECT meta_... wp_postmeta" />
-            <marker date="1471281510000" expanded="true" signature="189273:189418" ph="SELECT post_... " />
-            <marker date="1471281510000" expanded="true" signature="189477:189618" ph="SELECT post_... " />
-            <marker date="1471281510000" expanded="true" signature="189718:189912" ph="SELECT DATE_... " />
-            <marker date="1471281510000" expanded="true" signature="200627:200737" ph="SELECT ID FR... wp_posts" />
-            <marker date="1471281510000" expanded="true" signature="203258:203314" ph="SELECT wp_po... wp_posts" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,9 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="48" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#298#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,9 +673,8 @@
         <state relative-caret-position="375">
           <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -899,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-223">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,9 +712,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -942,9 +731,8 @@
         <state relative-caret-position="0">
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -962,9 +750,8 @@
         <state relative-caret-position="0">
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
@@ -978,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/post-worktime-logger.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+        <state relative-caret-position="1545">
+          <caret line="110" column="32" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -989,21 +776,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding>
-            <marker date="1369249720000" expanded="true" signature="2091:2201" ph="..." />
-            <marker date="1369249720000" expanded="true" signature="2101:2192" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/post-worktime-logger.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        <state relative-caret-position="251">
+          <caret line="239" column="8" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
           <folding>
-            <marker date="1476382098000" expanded="false" signature="9:100" ph=" ..." />
-            <marker date="1476382098000" expanded="true" signature="2083:2096" ph="..." />
-            <marker date="1476382098000" expanded="true" signature="3047:3060" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3096:3109" ph="..." />
+            <marker date="1477089020000" expanded="true" signature="3683:3696" ph="..." />
           </folding>
         </state>
       </provider>
