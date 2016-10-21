@@ -19,36 +19,41 @@ Text Domain: post-worktime-logger
 if ( !defined('PLUGINDIR') )
 	define( 'PLUGINDIR', 'wp-content/plugins' );
 
+include_once (__DIR__."/widget.php");
+
 /**
  * Handles the ping from frontend to track the worktime.
  */
 function pwlHandleWorktimePing()
 {
-	$postId = $_POST['currentPostId'];
-
-    if (is_numeric($postId))
+    if (is_user_logged_in())
     {
-        $post = get_post($postId);
+        $postId = $_POST['currentPostId'];
 
-        if ($post)
+        if (is_numeric($postId))
         {
-            $oldWorktime = get_post_meta($postId, "post-worktime", true);
-            if ($oldWorktime===false) $oldWorktime = 0;
+            $post = get_post($postId);
 
-            $lastPingTimeStamp = get_option("post-worktime-logger-last-ping-timestamp");
-            if (!$lastPingTimeStamp) $lastPingTimeStamp = time()-60;
+            if ($post)
+            {
+                $oldWorktime = get_post_meta($postId, "post-worktime", true);
+                if ($oldWorktime===false) $oldWorktime = 0;
 
-            $workingTimeSinceLastPing = time()-$lastPingTimeStamp;
-            if ($workingTimeSinceLastPing>60) $workingTimeSinceLastPing = 60;
+                $lastPingTimeStamp = get_option("post-worktime-logger-last-ping-timestamp");
+                if (!$lastPingTimeStamp) $lastPingTimeStamp = time()-60;
 
-            $newWorktime = $oldWorktime+$workingTimeSinceLastPing;
+                $workingTimeSinceLastPing = time()-$lastPingTimeStamp;
+                if ($workingTimeSinceLastPing>60) $workingTimeSinceLastPing = 60;
 
-            update_post_meta($postId, "post-worktime", $newWorktime);
+                $newWorktime = $oldWorktime+$workingTimeSinceLastPing;
 
+                update_post_meta($postId, "post-worktime", $newWorktime);
+
+            }
         }
-    }
 
-	update_option("post-worktime-logger-last-ping-timestamp", time());
+        update_option("post-worktime-logger-last-ping-timestamp", time());
+    }
 }
 
 /**
@@ -82,26 +87,14 @@ function pwlRenderMetaBoxSummary()
             {
                 $currentPostId = $_GET['post'];
 
-                $content.= "<span style=\"display:none;\" id=\"post-worktime-logger-current-post-id\">".$currentPostId."</span>";
-
                 $worktime = get_post_meta($currentPostId, "post-worktime", true);
-
                 if (!$worktime)
                 {
                     update_post_meta( $currentPostId, "post-worktime", 0 );
                     $worktime = $worktime = get_post_meta($currentPostId, "post-worktime", true);
-
                 }
 
-                $content .= __('Current worktime', "post-worktime-logger").': <span id="frontendTime">0</span><br />';
-
-                $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
-                $content .= pwlSecondsToHumanReadableTime($worktime);
-                $content .= '</span><br />';
-                $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", "post-worktime-logger").'</button>';
-                $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", "post-worktime-logger").'</button>';
-                $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", "post-worktime-logger").'</button>';
-
+                $content.=pwlGetPostWorktimeLoggerControlBox($worktime, $currentPostId);
             }
         }
     }
@@ -109,6 +102,28 @@ function pwlRenderMetaBoxSummary()
 
 
     echo $content;
+}
+
+/**
+ * Creates the control box for post worktime logger.
+ *
+ * @param int $_totalWorktime the total worktime.
+ * @param int $_postId the post id.
+ * @return string the html code for the control box.
+ */
+function pwlGetPostWorktimeLoggerControlBox($_totalWorktime, $_postId)
+{
+    $content = "";
+    $content.= "<span style=\"display:none;\" id=\"post-worktime-logger-current-post-id\">".$_postId."</span>";
+    $content .= __('Current worktime', "post-worktime-logger").': <span id="frontendTime">0</span><br />';
+    $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
+    $content .= pwlSecondsToHumanReadableTime($_totalWorktime);
+    $content .= '</span><br />';
+    $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", "post-worktime-logger").'</button>';
+    $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", "post-worktime-logger").'</button>';
+    $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", "post-worktime-logger").'</button>';
+
+    return $content;
 }
 
 /**
@@ -190,18 +205,21 @@ function pwlWorktimeOrderBy( $_vars )
  */
 function pwlHandleWorktimeReset()
 {
-    $postId = $_POST['currentPostId'];
-
-    if (is_numeric($postId))
+    if (is_user_logged_in())
     {
-        $post = get_post($postId);
+        $postId = $_POST['currentPostId'];
 
-        if ($post)
+        if (is_numeric($postId))
         {
-            update_post_meta($postId, "post-worktime", 0);
+            $post = get_post($postId);
+
+            if ($post)
+            {
+                update_post_meta($postId, "post-worktime", 0);
+            }
         }
+        update_option("post-worktime-logger-last-ping-timestamp", time());
     }
-    update_option("post-worktime-logger-last-ping-timestamp", time());
 }
 
 //Register post meta box
@@ -223,9 +241,27 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	}
 });
 
+//Register scripts for frontend
+add_action("wp_enqueue_scripts", function () {
+    wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
+
+    if (is_user_logged_in())
+    {//only include js if the user is logged in.
+        wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ), array("jquery"));
+        wp_localize_script( 'post-worktime-logger', 'pwl',
+            array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+        );
+    }
+});
+
 add_filter( 'request', 'pwlWorktimeOrderBy' );
 add_filter( 'manage_edit-post_sortable_columns', 'pwlSortableColumn' );
 // For registering the column
 add_filter( 'manage_posts_columns', 'pwPostsPageHeader' );
 // For rendering the column
 add_action( 'manage_posts_custom_column', 'pwlWorktimeColumnRenderer', 10, 2 );
+
+//Register frontend widget
+add_action('widgets_init', function(){
+    register_widget('PwlFrontendWidget');
+});
