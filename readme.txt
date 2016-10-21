@@ -29,13 +29,24 @@ Let Post Worktime Logger fill this gap!
 
 1. This is the meta box right to the post editor.
 1. This is the posts page.
+1. These are the widget options.
+1. This is the control panel in frontend for logged in users.
+1. This is the widget in frontend for not logged in users.
 
 == Changelog ==
+
+= 1.2.0 =
+* Implemented a frontend widget to display worktime for not logged in users and for logged in users the control box to track the worktime.
+* Improved security for the plugin.
+* Made the code more reuseable.
+* Fixed textdomain for strings.
+* Updated german translation.
 
 = 1.1.0 =
 * Implemented support to pause and resume the tracking of the work time.
 * Implemented support to reset the working time of a post.
 * Implemented support for a sortable column on posts page, which displays the total worktime for each post.
+* Added languages fr_Be and sq.
 
 = 1.0.0 =
 * First Version
