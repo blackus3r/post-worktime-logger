@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.0.0\n"
+"Project-Id-Version: Post Worktime Logger v1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-13 18:33:11+0000\n"
+"PO-Revision-Date: 2016-10-21 11:28:03+0000\n"
 "Last-Translator: admin <admin@localhost.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,43 +20,74 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:108
+#: post-worktime-logger.php:101
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
 msgstr "Sie müssen den Artikel einmal speichern, bevor die Zeitmessung beginnt."
 
-#: post-worktime-logger.php:121
+#: post-worktime-logger.php:136
 #@ post-worktime-logger
 msgid "Post Worktime"
 msgstr "Artikel Arbeitszeit"
 
-#: post-worktime-logger.php:96
+#: post-worktime-logger.php:118
 #@ post-worktime-logger
 msgid "Current worktime"
 msgstr "Aktuelle Arbeitszeit"
 
-#: post-worktime-logger.php:98
+#: post-worktime-logger.php:119
 #@ post-worktime-logger
 msgid "Total worktime"
 msgstr "Gesamte Arbeitszeit"
 
-#: post-worktime-logger.php:101
+#: post-worktime-logger.php:122
 #@ post-worktime-logger
 msgid "Pause"
 msgstr "Pausieren"
 
-#: post-worktime-logger.php:102
+#: post-worktime-logger.php:123
 #@ post-worktime-logger
 msgid "Resume"
 msgstr "Fortfahren"
 
-#: post-worktime-logger.php:103
+#: post-worktime-logger.php:124
 #@ post-worktime-logger
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: post-worktime-logger.php:135
+#: post-worktime-logger.php:150
 #@ post-worktime-logger
 msgid "Worktime"
 msgstr "Arbeitszeit"
+
+#: widget.php:20
+#@ post-worktime-logger
+msgid "A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users."
+msgstr "Ein Widget welches im Frontend das Admin Arbeitszeiten Widget für eingeloggte Benutzer zur Verfügung stellt oder die gesamte Arbeitszeit für den jeweiligen Artikel für nicht eingeloggte Nutzer."
+
+#: widget.php:87
+#@ post-worktime-logger
+msgid "Titel:"
+msgstr "Titel:"
+
+#: widget.php:91
+#@ post-worktime-logger
+msgid "Display widget for not logged in users"
+msgstr "Zeige Widget auch nicht eingeloggten Nutzern"
+
+#: widget.php:95
+#@ post-worktime-logger
+msgid "Pre text:"
+msgstr "Vor dem Text:"
+
+#: widget.php:97
+#: widget.php:102
+#@ post-worktime-logger
+msgid "This will only appear if 'Display widget for not logged in users' is enabled."
+msgstr "Dies erscheint nur, wenn 'Zeige Widget auch nicht eingeloggten Nutzern' aktiviert ist."
+
+#: widget.php:100
+#@ post-worktime-logger
+msgid "After text:"
+msgstr "Nach dem Text:"
 

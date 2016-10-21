@@ -17,7 +17,7 @@ class PwlFrontendWidget extends WP_Widget
             'pwl_frontend_widget',
             'Post Worktime Logger',
             array(
-                'description' => __("A widget in the frontend to display the post editor widget for logged in users or the worktime for the current post for not logged in users.", "post-worktime-logger")
+                'description' => __("A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users.", "post-worktime-logger")
             )
         );
     }
