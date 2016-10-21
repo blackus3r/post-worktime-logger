@@ -67,8 +67,8 @@ msgstr "Ein Widget welches im Frontend das Admin Arbeitszeiten Widget für einge
 
 #: widget.php:87
 #@ post-worktime-logger
-msgid "Titel:"
-msgstr "Titel:"
+msgid "Title:"
+msgstr "Title:"
 
 #: widget.php:91
 #@ post-worktime-logger

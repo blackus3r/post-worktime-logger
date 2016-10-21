@@ -67,7 +67,7 @@ msgstr "Um mini aplicativo de frontend para exibir o tempo trabalhado pelo admin
 
 #: widget.php:87
 #@ post-worktime-logger
-msgid "Titel:"
+msgid "Title:"
 msgstr ""
 
 #: widget.php:91
