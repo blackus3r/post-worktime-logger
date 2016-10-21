@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.0.0\n"
+"Project-Id-Version: Post Worktime Logger v1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-13 18:33:07+0000\n"
+"PO-Revision-Date: 2016-10-21 11:24:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,43 +20,74 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:121
+#: post-worktime-logger.php:136
 #@ post-worktime-logger
 msgid "Post Worktime"
 msgstr "Temps de travail sur l&apos;article"
 
-#: post-worktime-logger.php:108
+#: post-worktime-logger.php:101
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
 msgstr "Veuillez sauvegarder l&apos;article pour pouvoir suivre le temps passé dessus."
 
-#: post-worktime-logger.php:98
+#: post-worktime-logger.php:119
 #@ post-worktime-logger
 msgid "Total worktime"
 msgstr "Total du temps passé"
 
-#: post-worktime-logger.php:96
+#: post-worktime-logger.php:118
 #@ post-worktime-logger
 msgid "Current worktime"
 msgstr ""
 
-#: post-worktime-logger.php:101
+#: post-worktime-logger.php:122
 #@ post-worktime-logger
 msgid "Pause"
 msgstr ""
 
-#: post-worktime-logger.php:102
+#: post-worktime-logger.php:123
 #@ post-worktime-logger
 msgid "Resume"
 msgstr ""
 
-#: post-worktime-logger.php:103
+#: post-worktime-logger.php:124
 #@ post-worktime-logger
 msgid "Reset"
 msgstr ""
 
-#: post-worktime-logger.php:135
+#: post-worktime-logger.php:150
 #@ post-worktime-logger
 msgid "Worktime"
+msgstr ""
+
+#: widget.php:20
+#@ post-worktime-logger
+msgid "A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users."
+msgstr ""
+
+#: widget.php:87
+#@ post-worktime-logger
+msgid "Titel:"
+msgstr ""
+
+#: widget.php:91
+#@ post-worktime-logger
+msgid "Display widget for not logged in users"
+msgstr ""
+
+#: widget.php:95
+#@ post-worktime-logger
+msgid "Pre text:"
+msgstr ""
+
+#: widget.php:97
+#: widget.php:102
+#@ post-worktime-logger
+msgid "This will only appear if 'Display widget for not logged in users' is enabled."
+msgstr ""
+
+#: widget.php:100
+#@ post-worktime-logger
+msgid "After text:"
 msgstr ""
 
