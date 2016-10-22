@@ -18,6 +18,8 @@ Let Post Worktime Logger fill this gap!
  *  Tracks the working time for each post.
  *  Checks activity and only updates working time, if you really worked on the current post.
 
+This project is actively maintained on [Github](https://github.com/blackus3r/post-worktime-logger)
+
 == Installation ==
 
 1. Upload `/post-worktime-logger/` to the `/wp-content/plugins/` directory
