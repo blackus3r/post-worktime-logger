@@ -67,7 +67,7 @@ msgstr ""
 
 #: widget.php:87
 #@ post-worktime-logger
-msgid "Titel:"
+msgid "Title:"
 msgstr ""
 
 #: widget.php:91
