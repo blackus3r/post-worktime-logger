@@ -222,6 +222,80 @@ function pwlHandleWorktimeReset()
     }
 }
 
+function pwlStatsPage() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	
+	$numOfPosts = 25;
+	
+	//TODO: manage_options users will be able to see complete statistics. is this sensitive data?
+	$args = array(
+		'posts_per_page' => $numOfPosts,
+		'order'		=> 'DESC',
+		'orderby'   => 'meta_value_num',
+		'meta_key'  => 'post-worktime',
+	);
+	
+	$query = new WP_Query( $args );
+	
+	$posts_titles = array();
+	$posts_worktimes = array();
+	
+	if ( $query->have_posts() ) {
+
+		$tPosts = $query->get_posts();
+
+		foreach($tPosts as $tPost){
+			$posts_titles[] = $tPost->post_title;
+			$posts_worktimes[] = get_post_meta($tPost->ID, "post-worktime", true);
+		}
+	
+		echo '<div class="wrap">';
+		echo '<h1>Post Worktime Logger - Statistics</h1>';
+		echo '<h2>top '.$numOfPosts.' posts (worktime)';
+		echo '<div id="chartsContainer" style="width:75%;">';
+		echo '<canvas id="pwlTopFiveWorktimePosts" width="400" height="400"></canvas>';
+		echo '</div>';
+		echo '</div>';
+		
+		echo "<script>
+				var ctx = document.getElementById('pwlTopFiveWorktimePosts');
+				var pwlTopFiveWorktimePosts = new Chart(ctx, {
+					type: 'horizontalBar',
+					data: {
+						labels: ['" . implode('\', \'', $posts_titles) . "'],
+						datasets: [{
+							label: 'worktime in seconds',
+							data: [" . implode(',', $posts_worktimes) . "],
+							backgroundColor: 'rgba(54, 162, 235, 0.2)',
+							borderColor: 'rgba(54, 162, 235, 1)',
+							borderWidth: 1
+						}]
+					},
+					options: {
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero:true
+								}
+							}]
+						}
+					}
+				});
+			</script>";
+	
+	} else {
+		echo 'no data.';
+	}
+}
+
+// Register menu entry for pwlStatsPage
+add_action( 'admin_menu', function(){
+	//TODO: this is a submenu of plugins but doesnt quite make sense...better move it to a separate menu
+	add_submenu_page( 'plugins.php', 'pwlStats', 'pwl-Statistics', 'manage_options', 'pwlStats', 'pwlStatsPage' );
+});
+
 //Register post meta box
 add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
@@ -245,6 +319,9 @@ add_action( 'init', function () {
 
 //Register admin javascript file
 add_action("admin_enqueue_scripts", function ($hook) {
+	if ($hook=="plugins_page_pwlStats"){
+		wp_enqueue_script("post-worktime-logger-stats-chartjs", plugins_url( "resources/js/Chart.bundle.min.js", __FILE__ ));
+	}
 	if ($hook=="post.php")
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
