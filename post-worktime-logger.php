@@ -20,6 +20,7 @@ if ( !defined('PLUGINDIR') )
 	define( 'PLUGINDIR', 'wp-content/plugins' );
 
 include_once (__DIR__."/widget.php");
+include_once (__DIR__."/settings.php");
 
 /**
  * Handles the ping from frontend to track the worktime.
@@ -276,3 +277,8 @@ add_action( 'manage_posts_custom_column', 'pwlWorktimeColumnRenderer', 10, 2 );
 add_action('widgets_init', function(){
     register_widget('PwlFrontendWidget');
 });
+
+if(is_admin())
+{
+    new PostWorktimeLoggerSettingsPage();
+}
