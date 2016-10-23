@@ -16,8 +16,6 @@ class PostWorktimeLoggerSettingsPage
      */
     private $options;
 
-    private $optionsPrefix = "pwl";
-
     /**
      * Start up
      */
@@ -25,29 +23,46 @@ class PostWorktimeLoggerSettingsPage
     {
         $this->options = get_option("post-worktime-logger-options");
 
-        add_action( 'admin_menu', array( $this, 'addPluginPage') );
+        add_action( 'admin_menu', array($this, 'registerSettingsPage' ));
         add_action( 'admin_init', array( $this, 'pageInit') );
     }
 
     /**
      * Add options page
      */
-    public function addPluginPage()
+    public function registerSettingsPage()
     {
-        // This page will be under "Settings"
-        add_options_page(
-            __('Post WorkTime Logger Settings', "post-worktime-logger"),
-            __('Post Worktime Logger', "post-worktime-logger"),
+        add_menu_page(
+            __("Statistics ", "post-worktime-logger"),
+            __("Worktime Logger", "post-worktime-logger"),
+            'manage_options',
+            "post-worktime-logger-statistics",
+            array($this, "createAdminStatisticsPage")
+        );
+
+        add_submenu_page(
+            "post-worktime-logger-statistics",
+            __("Settings", "post-worktime-logger"),
+            __("Settings", "post-worktime-logger"),
             'manage_options',
             'post-worktime-logger-settings',
-            array( $this, 'createAdminPage' )
+            array($this, "createAdminSettingsPage")
         );
+    }
+
+    /**
+     *
+     */
+    public function createAdminStatisticsPage()
+    {
+        echo "<h1>Statistics</h1>";
+        echo "<p>Comming soon...</p>";
     }
 
     /**
      * Options page callback
      */
-    public function createAdminPage()
+    public function createAdminSettingsPage()
     {
         ?>
         <div class="wrap">
@@ -57,7 +72,12 @@ class PostWorktimeLoggerSettingsPage
                 // This prints out all hidden setting fields
                 settings_fields('post-worktime-logger-option-group');
                 do_settings_sections('post-worktime-logger-settings');
-                submit_button();
+                submit_button(__("Save Changes"), "primary", "submit", false);
+
+                /**
+                 * Todo: implement reset button.
+                 * <button name="resetWholeWorktime" value="true" class="button danger"><?php _e("Reset whole worktime", "post-worktime-logger"); ?></button>
+                 */
                 ?>
             </form>
         </div>
@@ -83,9 +103,9 @@ class PostWorktimeLoggerSettingsPage
         );
 
         add_settings_field(
-           'showWorktimeInPostMeta',
-            __('Show worktime in post meta', "post-worktime-logger"),
-            array( $this, 'showWorktimeInPostMetaCallback'),
+           'enableControlButtons',
+            __('Enable control buttons', "post-worktime-logger"),
+            array( $this, 'enableControlButtonsCallback'),
             'post-worktime-logger-settings',
             'general'
         );
@@ -98,12 +118,12 @@ class PostWorktimeLoggerSettingsPage
      *
      * @return array
      */
-    public function sanitize($_input )
+    public function sanitize($_input)
     {
         $newInput = array();
-        if( isset( $_input['showWorktimeInPostMeta'] ) )
+        if( isset( $_input['enableControlButtons'] ) )
         {
-            $newInput['showWorktimeInPostMeta'] = $_input['showWorktimeInPostMeta'];
+            $newInput['enableControlButtons'] = $_input['enableControlButtons'];
 
         }
 
@@ -113,17 +133,16 @@ class PostWorktimeLoggerSettingsPage
     /**
      * Get the settings option array and print one of its values
      */
-    public function showWorktimeInPostMetaCallback()
+    public function enableControlButtonsCallback()
     {
-
-        if (isset($this->options['showWorktimeInPostMeta']))
+        if (isset($this->options['enableControlButtons']))
         {
-            $showWorktimeInPostMeta = $this->options['showWorktimeInPostMeta'];
+            $enableControlButtons = $this->options['enableControlButtons'];
         }
-        else $showWorktimeInPostMeta = null;
+        else $enableControlButtons = null;
 
         ?>
-            <input type="checkbox" id="showWorktimeInPostMeta" name="post-worktime-logger-options[showWorktimeInPostMeta]"  <?php checked($showWorktimeInPostMeta, 'on' ); ?> />
+            <input type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
         <?php
     }
 }
