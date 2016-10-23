@@ -23,8 +23,50 @@ class PostWorktimeLoggerSettingsPage
     {
         $this->options = get_option("post-worktime-logger-options");
 
-        add_action( 'admin_menu', array($this, 'registerSettingsPage' ));
-        add_action( 'admin_init', array( $this, 'pageInit') );
+        add_action( 'admin_notices', array( $this, 'pwlResetNotice' ) );
+        add_action('admin_menu', array($this, 'registerSettingsPage'));
+        add_action('admin_init', array($this, 'pageInit'));
+        add_action('admin_action_pwlResetWholeWorktime', array($this, "resetWholeWorktime"));
+    }
+
+    /**
+     * Prints admin notice, when reset whole worktime was pressed.
+     */
+    public function pwlResetNotice()
+    {
+        if ( ! isset( $_GET['pwlResetPostsNumber'] ) ) {
+            return;
+        }
+        ?>
+        <div class="updated">
+            <p><?php printf(__( 'Resetted worktime for %s posts.', 'post-worktime-logger' ), $_GET['pwlResetPostsNumber']); ?></p>
+        </div>
+        <?php
+    }
+
+    /**
+     * Resets whole worktime.
+     */
+    function resetWholeWorktime()
+    {
+        $updatedPosts = 0;
+        if (is_user_logged_in() && current_user_can("manage_options"))
+        {
+            $args = array(
+                'posts_per_page'   => -1
+            );
+
+            foreach(get_posts($args) as $post)
+            {
+                if (delete_post_meta($post->ID, 'post-worktime', 1));
+                {
+                    $updatedPosts++;
+                }
+            }
+        }
+
+        wp_redirect(add_query_arg( array( 'pwlResetPostsNumber' =>  $updatedPosts), $_SERVER['HTTP_REFERER'] ));
+        exit();
     }
 
     /**
@@ -67,18 +109,16 @@ class PostWorktimeLoggerSettingsPage
         ?>
         <div class="wrap">
             <h1><?php echo __("Post Worktime Logger Settings", "post-worktime-logger"); ?></h1>
-            <form method="post" action="options.php">
+            <form class="pwl-reset-form" method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
                 settings_fields('post-worktime-logger-option-group');
                 do_settings_sections('post-worktime-logger-settings');
                 submit_button(__("Save Changes"), "primary", "submit", false);
-
-                /**
-                 * Todo: implement reset button.
-                 * <button name="resetWholeWorktime" value="true" class="button danger"><?php _e("Reset whole worktime", "post-worktime-logger"); ?></button>
-                 */
                 ?>
+            </form>
+            <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>">
+                <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", "post-worktime-logger"); ?></button>
             </form>
         </div>
         <?php

@@ -11,3 +11,12 @@
 #pwl-reset-button{
     margin-left: 5px;
 }
+
+.pwl-reset-form{
+    display:inline-block;
+    float:left;
+}
+
+.pwl-reset-form .button.danger{
+    margin-top: 110px;
+}
