@@ -249,6 +249,9 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
 		wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
+        wp_localize_script( 'post-worktime-logger', 'pwl',
+            array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+        );
 	}
 });
 
