@@ -284,10 +284,10 @@ function pwlStatsPage() {
 					}
 				});
 			</script>";
-	
-	} else {
-		echo 'no data.';
+
+		return;
 	}
+	echo 'no data.';
 }
 
 // Register menu entry for pwlStatsPage
