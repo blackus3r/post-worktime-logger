@@ -4,7 +4,7 @@ Donate link:
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,12 @@ This project is actively maintained on [Github](https://github.com/blackus3r/pos
 1. This is the widget in frontend for not logged in users.
 
 == Changelog ==
+
+= 1.2.1 =
+* Added language pr_BR
+* Fixed typos
+* Fixed loading text languages
+* Added notice that this plugin is maintained on Github.
 
 = 1.2.0 =
 * Implemented a frontend widget to display worktime for not logged in users and for logged in users the control box to track the worktime.
