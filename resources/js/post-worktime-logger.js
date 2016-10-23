@@ -97,7 +97,10 @@ jQuery(document).ready(function () {
     //If frontend editor is available, we must declare ajaxurl.
     if (typeof ajaxurl == 'undefined')
     {
-        if (typeof pwl !== 'undefined') var ajaxurl = pwl.ajax_url;
+        if (typeof pwl != 'undefined')
+        {
+            var ajaxurl = pwl.ajax_url;
+        }
     }
 
     currentPostId = jQuery("#post-worktime-logger-current-post-id").html();
