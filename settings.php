@@ -182,7 +182,7 @@ class PostWorktimeLoggerSettingsPage
         else $enableControlButtons = null;
 
         ?>
-            <input type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
+            <input title="<?php _e("This will allow you to pause, resume and reset the worktime. "); ?>" type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
         <?php
     }
 }
