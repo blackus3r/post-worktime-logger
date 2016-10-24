@@ -97,8 +97,7 @@ class PostWorktimeLoggerSettingsPage
      */
     public function createAdminStatisticsPage()
     {
-        echo "<h1>Statistics</h1>";
-        echo "<p>Comming soon...</p>";
+        echo "<h1>".__("Statistics")."</h1>";
     }
 
     /**
