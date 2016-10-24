@@ -26,11 +26,12 @@ include_once (__DIR__."/widget.php");
  */
 function pwlHandleWorktimePing()
 {
-    if (is_user_logged_in())
+    if (is_user_logged_in() && isset($_POST['currentPostId']) && isset($_POST['worktimeToAdd']))
     {
         $postId = $_POST['currentPostId'];
+        $worktimeToAdd = $_POST['worktimeToAdd'];
 
-        if (is_numeric($postId))
+        if (is_numeric($postId) && is_numeric($worktimeToAdd))
         {
             $post = get_post($postId);
 
@@ -39,20 +40,11 @@ function pwlHandleWorktimePing()
                 $oldWorktime = get_post_meta($postId, "post-worktime", true);
                 if ($oldWorktime===false) $oldWorktime = 0;
 
-                $lastPingTimeStamp = get_option("post-worktime-logger-last-ping-timestamp");
-                if (!$lastPingTimeStamp) $lastPingTimeStamp = time()-60;
-
-                $workingTimeSinceLastPing = time()-$lastPingTimeStamp;
-                if ($workingTimeSinceLastPing>60) $workingTimeSinceLastPing = 60;
-
-                $newWorktime = $oldWorktime+$workingTimeSinceLastPing;
+                $newWorktime = $oldWorktime+$worktimeToAdd;
 
                 update_post_meta($postId, "post-worktime", $newWorktime);
-
             }
         }
-
-        update_option("post-worktime-logger-last-ping-timestamp", time());
     }
 }
 
