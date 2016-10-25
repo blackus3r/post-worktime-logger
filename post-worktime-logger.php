@@ -279,7 +279,7 @@ add_action("admin_enqueue_scripts", function ($hook)
 
         wp_localize_script( 'post-worktime-logger', 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'inactivityTimeout' => ( ! empty( $pwt_options['inactivityTimeout'] ) ) ? $pwt_options['inactivityTimeout'] : '5',
+            'inactivityTimeout' => ( ! empty( $pwt_options['inactivityTimeout'] ) ) ? esc_html( $pwt_options['inactivityTimeout'] ) : '5',
         ) );
 	}
 });
