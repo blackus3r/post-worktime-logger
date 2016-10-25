@@ -37,3 +37,36 @@ There is a missing feature? Please create an issue for that.
 ## Report a bug
 
 If you have found a bug, please create an issue or feel free to fix it and make a pull request for that fix.
+
+## Changelog
+
+###1.2.2
+* Fixed a bug, that no worktime was saved anymore in admin area.
+
+###1.2.1
+* Added language pr_BR
+* Fixed typos
+* Fixed loading text languages
+* Added notice that this plugin is maintained on Github.
+
+###1.2.0
+* Implemented a frontend widget to display worktime for not logged in users and for logged in users the control box to track the worktime.
+* Improved security for the plugin.
+* Made the code more reuseable.
+* Fixed textdomain for strings.
+* Updated german translation.
+
+###1.1.0
+* Implemented support to pause and resume the tracking of the work time.
+* Implemented support to reset the working time of a post.
+* Implemented support for a sortable column on posts page, which displays the total worktime for each post.
+* Added languages fr_Be and sq.
+
+###1.0.0
+* First Version
+
+## License
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation. Using the GPLv3 License. More info here. https://www.gnu.org/licenses/gpl.html
