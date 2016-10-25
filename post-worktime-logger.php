@@ -12,7 +12,7 @@ Description: A plugin to track the worktime for each post.
 Version: 1.2.2
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
-License: GPLv2 or later
+License: GPLv3
 Text Domain: post-worktime-logger
 */
 

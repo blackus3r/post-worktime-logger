@@ -5,8 +5,8 @@ Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, workt
 Requires at least: 2.3.1
 Tested up to: 4.6
 Stable tag: 1.2.2
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl.html
 
 Post Worktime Logger is a tool to track the time you worked on each post.
 
@@ -61,4 +61,3 @@ This project is actively maintained on [Github](https://github.com/blackus3r/pos
 
 = 1.0.0 =
 * First Version
-
