@@ -207,13 +207,11 @@ class PostWorktimeLoggerSettingsPage
      */
     public function inactivityTimeoutCallback()
     {
+        $inactivityTimeout = 5;
+
         if (! empty($this->options['inactivityTimeout']))
         {
             $inactivityTimeout = $this->options['inactivityTimeout'];
-        }
-        else
-        {
-            $inactivityTimeout = 5;
         }
 
         ?>
