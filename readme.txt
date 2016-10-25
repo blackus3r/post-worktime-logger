@@ -4,7 +4,7 @@ Donate link:
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -41,6 +41,9 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 1. This is the widget in frontend for not logged in users.
 
 == Changelog ==
+
+= 1.2.3 =
+* Refactored the calculation of the worktime. This should be now more precise.
 
 = 1.2.2 =
 * Fixed a bug, that no worktime was saved anymore in admin area.

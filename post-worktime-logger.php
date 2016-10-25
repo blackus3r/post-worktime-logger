@@ -9,7 +9,7 @@
 Plugin Name: Post Worktime Logger
 Plugin URI: https://wordpress.org/plugins/post-worktime-logger/
 Description: A plugin to track the worktime for each post.
-Version: 1.2.2
+Version: 1.2.3
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
 License: GPLv3
@@ -29,11 +29,12 @@ $pwlOptions = get_option("post-worktime-logger-options");
  */
 function pwlHandleWorktimePing()
 {
-    if (is_user_logged_in())
+    if (is_user_logged_in() && isset($_POST['currentPostId']) && isset($_POST['worktimeToAdd']))
     {
         $postId = $_POST['currentPostId'];
+        $worktimeToAdd = $_POST['worktimeToAdd'];
 
-        if (is_numeric($postId))
+        if (is_numeric($postId) && is_numeric($worktimeToAdd))
         {
             $post = get_post($postId);
 
@@ -42,20 +43,11 @@ function pwlHandleWorktimePing()
                 $oldWorktime = get_post_meta($postId, "post-worktime", true);
                 if ($oldWorktime===false) $oldWorktime = 0;
 
-                $lastPingTimeStamp = get_option("post-worktime-logger-last-ping-timestamp");
-                if (!$lastPingTimeStamp) $lastPingTimeStamp = time()-60;
-
-                $workingTimeSinceLastPing = time()-$lastPingTimeStamp;
-                if ($workingTimeSinceLastPing>60) $workingTimeSinceLastPing = 60;
-
-                $newWorktime = $oldWorktime+$workingTimeSinceLastPing;
+                $newWorktime = $oldWorktime+$worktimeToAdd;
 
                 update_post_meta($postId, "post-worktime", $newWorktime);
-
             }
         }
-
-        update_option("post-worktime-logger-last-ping-timestamp", time());
     }
 }
 

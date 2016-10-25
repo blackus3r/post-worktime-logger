@@ -47,12 +47,16 @@ jQuery(document).ready(function () {
     {
         if (pwlCheckActivity())
         {
-            pwlUpdateCustomFieldTextBox();
             jQuery.post(
                 ajaxurl,
                 {
                     "currentPostId": currentPostId,
-                    "action": "worktime_ping"
+                    "action": "worktime_ping",
+                    "worktimeToAdd": frontendTimeBuffer
+                },
+                function(_result){
+                    pwlUpdateCustomFieldTextBox();
+                    frontendTimeBuffer=0;
                 }
             );
         }
@@ -65,7 +69,6 @@ jQuery(document).ready(function () {
     {
         var oldWorkTime = parseInt(frontendWorktTimeTextAreaField.val(), 10);
         frontendWorktTimeTextAreaField.val((oldWorkTime+frontendTimeBuffer));
-        frontendTimeBuffer=0;
     }
 
     /**
