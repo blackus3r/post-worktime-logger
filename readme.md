@@ -26,9 +26,9 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 ## Screenshots
 
-[[https://ps.w.org/post-worktime-logger/assets/screenshot-1.png|alt=meta_box]]
-[[https://ps.w.org/post-worktime-logger/assets/screenshot-2.png|alt=list]]
-[[https://ps.w.org/post-worktime-logger/assets/screenshot-4.png|alt=control_panel]]
+![meta_box](https://ps.w.org/post-worktime-logger/assets/screenshot-1.png)
+![list](https://ps.w.org/post-worktime-logger/assets/screenshot-2.png)
+![control_panel](https://ps.w.org/post-worktime-logger/assets/screenshot-4.png)
 
 ## Suggest new features
 
