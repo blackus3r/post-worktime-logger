@@ -74,7 +74,7 @@ jQuery(document).ready(function () {
         var currentTime = new Date;
         var lastActivity = Math.round((currentTime.getTime() - lastMouseMove.getTime())/1000);
 
-        if (lastActivity<60*5 && !enablePause)
+        if (lastActivity < 60 * pwl.inactivityTimeout && !enablePause)
         {
             return true;
         }

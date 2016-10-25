@@ -275,9 +275,12 @@ add_action("admin_enqueue_scripts", function ($hook)
 	if ($hook=="post.php")
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
-        wp_localize_script( 'post-worktime-logger', 'pwl',
-            array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
-        );
+        $pwt_options = get_option("post-worktime-logger-options");
+
+        wp_localize_script( 'post-worktime-logger', 'pwl', array(
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'inactivityTimeout' => ( ! empty( $pwt_options['inactivityTimeout'] ) ) ? $pwt_options['inactivityTimeout'] : '5',
+        ) );
 	}
 });
 

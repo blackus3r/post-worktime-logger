@@ -181,7 +181,7 @@ class PostWorktimeLoggerSettingsPage
             if ( is_numeric( $inactivityTimeout ) ) {
                 $newInput['inactivityTimeout'] = $inactivityTimeout;
             }
-
+        }
 
         return $newInput;
     }
