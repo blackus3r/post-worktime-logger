@@ -26,7 +26,7 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 ## Screenshots
 
-![meta_box](https://ps.w.org/post-worktime-logger/assets/screenshot-1.png "Meta box in the editor")
+![meta_box](https://plugins.svn.wordpress.org/post-worktime-logger/assets/screenshot-1.png "Meta box in the editor")
 ![list](https://ps.w.org/post-worktime-logger/assets/screenshot-2.png "View of the post list")
 ![control_panel](https://ps.w.org/post-worktime-logger/assets/screenshot-4.png "View of the control panel with a logged user")
 
