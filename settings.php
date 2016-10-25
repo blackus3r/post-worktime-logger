@@ -198,7 +198,8 @@ class PostWorktimeLoggerSettingsPage
         else $enableControlButtons = null;
 
         ?>
-            <input title="<?php _e("This will allow you to pause, resume and reset the worktime. "); ?>" type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
+            <input type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
+            <p class="description"><?php esc_html_e( "This will allow you to pause, resume and reset the worktime.", "pwl" ); ?></p>
         <?php
     }
 
@@ -215,7 +216,8 @@ class PostWorktimeLoggerSettingsPage
         }
 
         ?>
-        <input title="<?php _e("This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.. "); ?>" type="text" size="3" id="inactivityTimeout" name="post-worktime-logger-options[inactivityTimeout]"  value="<?php echo esc_html( $inactivityTimeout ); ?>" />
+        <input type="text" size="3" id="inactivityTimeout" name="post-worktime-logger-options[inactivityTimeout]"  value="<?php echo esc_html( $inactivityTimeout ); ?>" />
+        <p class="description"><?php esc_html_e( "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.", "pwl"); ?></p>
         <?php
     }
 }
