@@ -104,7 +104,7 @@ class PwlFrontendWidget extends WP_Widget
         <?php
     }
 
-    public function update( $_newInstance, $_oldInstance )
+    public function update( $_newInstance )
     {
         $instance = array();
 
