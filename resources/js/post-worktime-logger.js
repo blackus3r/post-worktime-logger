@@ -4,6 +4,8 @@
  * @author Patrick Hausmann <privat@patrck-designs.de>
  */
 
+/** global pwl */
+
 var currentPostId;
 var frontendTimeContainer;
 var frontendTime = 0;
