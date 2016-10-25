@@ -174,6 +174,15 @@ class PostWorktimeLoggerSettingsPage
 
         }
 
+        if( isset( $_input['inactivityTimeout'] ) )
+        {
+            $inactivityTimeout = sanitize_text_field( wp_unslash( $_input['inactivityTimeout'] ) );
+
+            if ( is_numeric( $inactivityTimeout ) ) {
+                $newInput['inactivityTimeout'] = $inactivityTimeout;
+            }
+
+
         return $newInput;
     }
 
@@ -208,7 +217,7 @@ class PostWorktimeLoggerSettingsPage
         }
 
         ?>
-        <input title="<?php _e("This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.. "); ?>" type="text" size="2" id="inactivityTimeout" name="post-worktime-logger-options[inactivityTimeout]"  value="<?php echo esc_html( $inactivityTimeout ); ?>" />
+        <input title="<?php _e("This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.. "); ?>" type="text" size="3" id="inactivityTimeout" name="post-worktime-logger-options[inactivityTimeout]"  value="<?php echo esc_html( $inactivityTimeout ); ?>" />
         <?php
     }
 }
