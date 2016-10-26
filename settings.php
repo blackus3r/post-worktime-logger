@@ -139,7 +139,7 @@ class PostWorktimeLoggerSettingsPage
                     var pwlTopFiveWorktimePosts = new Chart(ctx, {
                         type: 'horizontalBar',
                         data: {
-                            labels: ['" . implode('\', \'', $posts_titles) . "'],
+                            labels: " . (json_encode($posts_titles,JSON_HEX_QUOT)) . ",
                             datasets: [{
                                 label: '".__('Minutes', "post-worktime-logger")."',
                                 generateLabels: null,
