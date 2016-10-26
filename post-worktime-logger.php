@@ -9,10 +9,10 @@
 Plugin Name: Post Worktime Logger
 Plugin URI: https://wordpress.org/plugins/post-worktime-logger/
 Description: A plugin to track the worktime for each post.
-Version: 1.2.0
+Version: 1.2.3
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
-License: GPLv2 or later
+License: GPLv3
 Text Domain: post-worktime-logger
 */
 
@@ -20,17 +20,21 @@ if ( !defined('PLUGINDIR') )
 	define( 'PLUGINDIR', 'wp-content/plugins' );
 
 include_once (__DIR__."/widget.php");
+include_once (__DIR__."/settings.php");
+
+$pwlOptions = get_option("post-worktime-logger-options");
 
 /**
  * Handles the ping from frontend to track the worktime.
  */
 function pwlHandleWorktimePing()
 {
-    if (is_user_logged_in())
+    if (is_user_logged_in() && isset($_POST['currentPostId']) && isset($_POST['worktimeToAdd']))
     {
         $postId = $_POST['currentPostId'];
+        $worktimeToAdd = $_POST['worktimeToAdd'];
 
-        if (is_numeric($postId))
+        if (is_numeric($postId) && is_numeric($worktimeToAdd))
         {
             $post = get_post($postId);
 
@@ -39,20 +43,11 @@ function pwlHandleWorktimePing()
                 $oldWorktime = get_post_meta($postId, "post-worktime", true);
                 if ($oldWorktime===false) $oldWorktime = 0;
 
-                $lastPingTimeStamp = get_option("post-worktime-logger-last-ping-timestamp");
-                if (!$lastPingTimeStamp) $lastPingTimeStamp = time()-60;
-
-                $workingTimeSinceLastPing = time()-$lastPingTimeStamp;
-                if ($workingTimeSinceLastPing>60) $workingTimeSinceLastPing = 60;
-
-                $newWorktime = $oldWorktime+$workingTimeSinceLastPing;
+                $newWorktime = $oldWorktime+$worktimeToAdd;
 
                 update_post_meta($postId, "post-worktime", $newWorktime);
-
             }
         }
-
-        update_option("post-worktime-logger-last-ping-timestamp", time());
     }
 }
 
@@ -76,10 +71,11 @@ function pwlSecondsToHumanReadableTime($seconds)
 function pwlRenderMetaBoxSummary()
 {
 	$content = "";
-    $postId = $_GET['post'];
 
     if (isset($_GET['post']))
     {
+        $postId = $_GET['post'];
+
         if (is_numeric($postId))
         {
             $post = get_post($postId);
@@ -119,9 +115,13 @@ function pwlGetPostWorktimeLoggerControlBox($_totalWorktime, $_postId)
     $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
     $content .= pwlSecondsToHumanReadableTime($_totalWorktime);
     $content .= '</span><br />';
-    $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", "post-worktime-logger").'</button>';
-    $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", "post-worktime-logger").'</button>';
-    $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", "post-worktime-logger").'</button>';
+
+    if (isControlBoxEnabled())
+    {
+        $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", "post-worktime-logger").'</button>';
+        $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", "post-worktime-logger").'</button>';
+        $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", "post-worktime-logger").'</button>';
+    }
 
     return $content;
 }
@@ -296,6 +296,22 @@ add_action( 'admin_menu', function(){
 	add_submenu_page( 'plugins.php', 'pwlStats', 'pwl-Statistics', 'manage_options', 'pwlStats', 'pwlStatsPage' );
 });
 
+/**
+ * Checks if the control box is enabled and returns true, otherwise false.
+ *
+ * @return bool
+ */
+function isControlBoxEnabled()
+{
+    global $pwlOptions;
+
+    if (isset($pwlOptions["enableControlButtons"]) && $pwlOptions["enableControlButtons"]=="on")
+    {
+        return true;
+    }
+    else return false;
+}
+
 //Register post meta box
 add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
@@ -315,17 +331,26 @@ add_action( 'init', function () {
     {
         load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/lang/' );
     }
-} );
+});
 
 //Register admin javascript file
 add_action("admin_enqueue_scripts", function ($hook) {
 	if ($hook=="plugins_page_pwlStats"){
 		wp_enqueue_script("post-worktime-logger-stats-chartjs", plugins_url( "resources/js/Chart.bundle.min.js", __FILE__ ));
 	}
+
+    global $pwlOptions;
+
+    wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
+
 	if ($hook=="post.php")
 	{
 		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
-		wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
+
+        wp_localize_script( 'post-worktime-logger', 'pwl', array(
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
+        ) );
 	}
 });
 
@@ -353,3 +378,8 @@ add_action( 'manage_posts_custom_column', 'pwlWorktimeColumnRenderer', 10, 2 );
 add_action('widgets_init', function(){
     register_widget('PwlFrontendWidget');
 });
+
+if(is_admin())
+{
+    new PostWorktimeLoggerSettingsPage();
+}

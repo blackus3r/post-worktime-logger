@@ -4,6 +4,8 @@
  * @author Patrick Hausmann <privat@patrck-designs.de>
  */
 
+/* global pwl:true */
+
 var currentPostId;
 var frontendTimeContainer;
 var frontendTime = 0;
@@ -45,12 +47,16 @@ jQuery(document).ready(function () {
     {
         if (pwlCheckActivity())
         {
-            pwlUpdateCustomFieldTextBox();
             jQuery.post(
                 ajaxurl,
                 {
                     "currentPostId": currentPostId,
-                    "action": "worktime_ping"
+                    "action": "worktime_ping",
+                    "worktimeToAdd": frontendTimeBuffer
+                },
+                function(_result){
+                    pwlUpdateCustomFieldTextBox();
+                    frontendTimeBuffer=0;
                 }
             );
         }
@@ -63,7 +69,6 @@ jQuery(document).ready(function () {
     {
         var oldWorkTime = parseInt(frontendWorktTimeTextAreaField.val(), 10);
         frontendWorktTimeTextAreaField.val((oldWorkTime+frontendTimeBuffer));
-        frontendTimeBuffer=0;
     }
 
     /**
@@ -74,7 +79,7 @@ jQuery(document).ready(function () {
         var currentTime = new Date;
         var lastActivity = Math.round((currentTime.getTime() - lastMouseMove.getTime())/1000);
 
-        if (lastActivity<60*5 && !enablePause)
+        if (lastActivity < 60 * pwl.inactivityTimeout && !enablePause)
         {
             return true;
         }
@@ -97,7 +102,10 @@ jQuery(document).ready(function () {
     //If frontend editor is available, we must declare ajaxurl.
     if (typeof ajaxurl == 'undefined')
     {
-        if (typeof pwl !== 'undefined') var ajaxurl = pwl.ajax_url;
+        if (typeof pwl != 'undefined')
+        {
+            var ajaxurl = pwl.ajax_url;
+        }
     }
 
     currentPostId = jQuery("#post-worktime-logger-current-post-id").html();
