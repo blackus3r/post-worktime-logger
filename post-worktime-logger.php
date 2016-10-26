@@ -257,11 +257,14 @@ add_action( 'init', function () {
     {
         load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/lang/' );
     }
-} );
+});
 
 //Register admin javascript file
-add_action("admin_enqueue_scripts", function ($hook)
-{
+add_action("admin_enqueue_scripts", function ($hook) {
+    if ($hook=="toplevel_page_post-worktime-logger-statistics"){
+		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/Chart.bundle.min.js", __FILE__ ));
+	}
+
     global $pwlOptions;
 
     wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));

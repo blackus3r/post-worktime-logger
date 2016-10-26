@@ -93,11 +93,81 @@ class PostWorktimeLoggerSettingsPage
     }
 
     /**
-     *
+     * Prints a statistic page.
      */
-    public function createAdminStatisticsPage()
+    function createAdminStatisticsPage()
     {
-        echo "<h1>".__("Statistics")."</h1>";
+        if ( !current_user_can( 'manage_options' ) )  {
+            wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+        }
+
+        $numOfPosts = 25;
+
+        $args = array(
+            'posts_per_page' => $numOfPosts,
+            'order'		=> 'DESC',
+            'orderby'   => 'meta_value_num',
+            'meta_key'  => 'post-worktime',
+        );
+
+        $query = new WP_Query( $args );
+
+        $posts_titles = array();
+        $posts_worktimes = array();
+
+        if ( $query->have_posts() ) {
+
+            $tPosts = $query->get_posts();
+
+            foreach($tPosts as $tPost){
+                $posts_titles[] = $tPost->post_title;
+                $posts_worktimes[] = round((get_post_meta($tPost->ID, "post-worktime", true)/60), 0);
+            }
+
+            echo '<div class="wrap">';
+            echo "<h1>".__("Statistics", "post-worktime-logger")."</h1>";
+            echo '<h2>'.sprintf(__("Top %s posts (worktime)", "post-worktime-logger"), $numOfPosts).'</h2>';
+            echo '<div id="chartsContainer" style="width:90%;">';
+            echo '<canvas id="pwlTopWorktimePosts" width="400" height="200"></canvas>';
+            echo '</div>';
+            echo '</div>';
+
+            echo "<script type='text/javascript'>
+				jQuery(document).ready(function () {
+
+                    var ctx = document.getElementById('pwlTopWorktimePosts');
+                    var pwlTopFiveWorktimePosts = new Chart(ctx, {
+                        type: 'horizontalBar',
+                        data: {
+                            labels: " . (json_encode($posts_titles,JSON_HEX_QUOT)) . ",
+                            datasets: [{
+                                label: '".__('Minutes', "post-worktime-logger")."',
+                                generateLabels: null,
+                                data: [" . implode(',', $posts_worktimes) . "],
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                hoverBackgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                        display: true,
+                        barThickness: 2,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero:true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                });
+			</script>";
+
+            return;
+        }
+        else _e('No data.', "post-worktime-logger");
     }
 
     /**
