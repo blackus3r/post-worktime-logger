@@ -39,6 +39,8 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 1. These are the widget options.
 1. This is the control panel in frontend for logged in users.
 1. This is the widget in frontend for not logged in users.
+1. This is the statistics page which displays the top 25 posts.
+1. This is the settings page.
 
 == Changelog ==
 

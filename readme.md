@@ -28,6 +28,7 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 ![meta_box](screenshots/screenshot-1.png)
 ![list](screenshots/screenshot-2.png)
+![statistics](screenshots/screenshot-6.png)
 ![control_panel](screenshots/screenshot-4.png)
 
 ## Suggest new features
