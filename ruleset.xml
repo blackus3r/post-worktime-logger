@@ -8,7 +8,7 @@
     <!--
     We may also want to to include all the rules in a standard
     -->
-    <rule ref="WordPress-Core">
+    <rule ref="WordPress">
         <!--
         We may want a middle ground though. The best way to do this is add the
         entire ruleset, then rule by rule, remove ones that don't suit a project. We
