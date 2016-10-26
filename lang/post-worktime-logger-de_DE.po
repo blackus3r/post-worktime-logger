@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Post Worktime Logger v1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-26 21:32:50+0000\n"
+"PO-Revision-Date: 2016-10-26 21:36:48+0000\n"
 "Last-Translator: admin <admin@localhost.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr "Die Arbeitszeit von %s Artikeln wurde zurückgesetzt."
 #: settings.php:79
 #@ post-worktime-logger
 msgid "Worktime Logger"
-msgstr "Arbeitszeit-Logger"
+msgstr "Worktime Logger"
 
 #: settings.php:87
 #: settings.php:88
@@ -173,5 +173,5 @@ msgstr "Erlaubt Ihnen das pausieren, fortfahren und zurücksetzen der Arbeitszei
 #: settings.php:290
 #@ post-worktime-logger
 msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
-msgstr "Erlaubt ihnen die maximale Zeit der Abwesenheit in Minuten anzugeben, bis der Timer pausiert."
+msgstr "Erlaubt Ihnen die maximale Zeit der Abwesenheit in Minuten anzugeben, bis der Timer pausiert."
 
