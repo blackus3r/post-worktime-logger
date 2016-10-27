@@ -11,13 +11,15 @@
  */
 class PwlFrontendWidget extends WP_Widget
 {
+    const PWL_TEXT_DOMAIN = "post-worktime-logger";
+
     public function __construct()
     {
         parent::__construct(
             'pwl_frontend_widget',
             'Post Worktime Logger',
             array(
-                'description' => __("A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users.", "post-worktime-logger")
+                'description' => __("A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users.", self::PWL_TEXT_DOMAIN)
             )
         );
     }
@@ -84,22 +86,22 @@ class PwlFrontendWidget extends WP_Widget
         $afterText = $_instance['afterText'];
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('Title:', "post-worktime-logger"); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('Title:', self::PWL_TEXT_DOMAIN); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('displayWorktimeForNotLoggedInUsers'); ?>"><?php echo __("Display widget for not logged in users", "post-worktime-logger"); ?></label>
+            <label for="<?php echo $this->get_field_id('displayWorktimeForNotLoggedInUsers'); ?>"><?php echo __("Display widget for not logged in users", self::PWL_TEXT_DOMAIN); ?></label>
             <input class="checkbox" id="<?php echo $this->get_field_id('displayWorktimeForNotLoggedInUsers'); ?>" name="<?php echo $this->get_field_name('displayWorktimeForNotLoggedInUsers'); ?>" type="checkbox" <?php checked($displayWorktimeForNotLoggedInUsers, 'on' ); ?>/>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('preText'); ?>"><?php echo __("Pre text:", "post-worktime-logger"); ?></label>
+            <label for="<?php echo $this->get_field_id('preText'); ?>"><?php echo __("Pre text:", self::PWL_TEXT_DOMAIN); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('preText'); ?>" type="text" value="<?php echo esc_attr($preText); ?>" />
-            <p><?php echo __("This will only appear if 'Display widget for not logged in users' is enabled.", "post-worktime-logger") ?></p>
+            <p><?php echo __("This will only appear if 'Display widget for not logged in users' is enabled.", self::PWL_TEXT_DOMAIN) ?></p>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('afterText'); ?>"><?php echo __("After text:", "post-worktime-logger"); ?></label>
+            <label for="<?php echo $this->get_field_id('afterText'); ?>"><?php echo __("After text:", self::PWL_TEXT_DOMAIN); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('afterText'); ?>" type="text" value="<?php echo esc_attr($afterText); ?>" />
-            <p><?php echo __("This will only appear if 'Display widget for not logged in users' is enabled.", "post-worktime-logger") ?></p>
+            <p><?php echo __("This will only appear if 'Display widget for not logged in users' is enabled.", self::PWL_TEXT_DOMAIN) ?></p>
         </p>
         <?php
     }

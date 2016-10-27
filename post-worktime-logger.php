@@ -23,6 +23,7 @@ include_once (__DIR__."/widget.php");
 include_once (__DIR__."/settings.php");
 
 const PWL_NAME = "post-worktime-logger";
+const PWL_TEXT_DOMAIN = "post-worktime-logger";
 
 $pwlOptions = get_option("post-worktime-logger-options");
 
@@ -96,7 +97,7 @@ function pwlRenderMetaBoxSummary()
             }
         }
     }
-    else $content = __("You have to save the post, before we can track the time.", PWL_NAME);
+    else $content = __("You have to save the post, before we can track the time.", PWL_TEXT_DOMAIN);
 
 
     echo $content;
@@ -120,9 +121,9 @@ function pwlGetPostWorktimeLoggerControlBox($_totalWorktime, $_postId)
 
     if (isControlBoxEnabled())
     {
-        $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", PWL_NAME).'</button>';
-        $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", PWL_NAME).'</button>';
-        $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", PWL_NAME).'</button>';
+        $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", PWL_TEXT_DOMAIN).'</button>';
+        $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", PWL_TEXT_DOMAIN).'</button>';
+        $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", PWL_TEXT_DOMAIN).'</button>';
     }
 
     return $content;
@@ -135,7 +136,7 @@ function pwlAddMetaBoxSummary()
 {
     add_meta_box(
         'post-worktime-logger-meta-box',
-        __( 'Post Worktime', PWL_NAME),
+        __( 'Post Worktime', PWL_TEXT_DOMAIN),
         'pwlRenderMetaBoxSummary'
     );
 }
@@ -149,7 +150,7 @@ function pwlAddMetaBoxSummary()
 function pwPostsPageHeader($_columns)
 {
     return array_merge( $_columns,
-        array('pwlworktimecolumn' => __('Worktime', PWL_NAME)) );
+        array('pwlworktimecolumn' => __('Worktime', PWL_TEXT_DOMAIN)) );
 }
 
 /**
@@ -249,7 +250,7 @@ add_action( 'wp_ajax_worktime_reset', 'pwlHandleWorktimeReset');
 
 
 add_action( 'init', function () {
-    $domain = PWL_NAME;
+    $domain = PWL_TEXT_DOMAIN;
     $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
     if ( $loaded = load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' ) )
     {
