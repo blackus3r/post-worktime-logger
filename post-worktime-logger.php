@@ -276,6 +276,7 @@ add_action("admin_enqueue_scripts", function ($hook) {
         wp_localize_script( 'post-worktime-logger', 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
+            'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
         ) );
 	}
 });
