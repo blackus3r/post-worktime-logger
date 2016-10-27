@@ -7,6 +7,7 @@
 Post Worktime Logger is a WordPress plugin that allows you to track the time you worked on each post.
 
 You can find more information here. https://wordpress.org/plugins/post-worktime-logger/
+German changelog and tutorials of ths plugin can be found on [DerPade](http://www.derpade.de/series/post-worktime-logger/)
 
 ## What does it do?
 
