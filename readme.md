@@ -41,6 +41,12 @@ If you have found a bug, please create an issue or feel free to fix it and make 
 
 ## Changelog
 
+### 1.3.0 
+* Implemented an own page for Post Worktime Logger.
+* Implemented an options page with some nice options and a reset button.
+* Implemented a statistics page to show the top 25 posts (worktime.
+* Improved documentation of the plugin.
+
 ###1.2.2
 * Fixed a bug, that no worktime was saved anymore in admin area.
 
