@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.2.0\n"
+"Project-Id-Version: Post Worktime Logger v1.2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-21 22:15:03+0000\n"
+"PO-Revision-Date: 2016-10-26 21:36:48+0000\n"
 "Last-Translator: admin <admin@localhost.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:101
+#: post-worktime-logger.php:97
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
 msgstr "Sie müssen den Artikel einmal speichern, bevor die Zeitmessung beginnt."
@@ -30,27 +30,27 @@ msgstr "Sie müssen den Artikel einmal speichern, bevor die Zeitmessung beginnt.
 msgid "Post Worktime"
 msgstr "Artikel Arbeitszeit"
 
-#: post-worktime-logger.php:118
+#: post-worktime-logger.php:114
 #@ post-worktime-logger
 msgid "Current worktime"
 msgstr "Aktuelle Arbeitszeit"
 
-#: post-worktime-logger.php:119
+#: post-worktime-logger.php:115
 #@ post-worktime-logger
 msgid "Total worktime"
 msgstr "Gesamte Arbeitszeit"
 
-#: post-worktime-logger.php:122
+#: post-worktime-logger.php:121
 #@ post-worktime-logger
 msgid "Pause"
 msgstr "Pausieren"
 
-#: post-worktime-logger.php:123
+#: post-worktime-logger.php:122
 #@ post-worktime-logger
 msgid "Resume"
 msgstr "Fortfahren"
 
-#: post-worktime-logger.php:124
+#: post-worktime-logger.php:123
 #@ post-worktime-logger
 msgid "Reset"
 msgstr "Zurücksetzen"
@@ -90,4 +90,88 @@ msgstr "Dies erscheint nur, wenn 'Zeige Widget auch nicht eingeloggten Nutzern' 
 #@ post-worktime-logger
 msgid "After text:"
 msgstr "Nach dem Text:"
+
+#: settings.php:42
+#, php-format
+#@ post-worktime-logger
+msgid "Resetted worktime for %s posts."
+msgstr "Die Arbeitszeit von %s Artikeln wurde zurückgesetzt."
+
+#: settings.php:79
+#@ post-worktime-logger
+msgid "Worktime Logger"
+msgstr "Worktime Logger"
+
+#: settings.php:87
+#: settings.php:88
+#@ post-worktime-logger
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: settings.php:101
+#@ default
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: settings.php:78
+#: settings.php:128
+#@ post-worktime-logger
+msgid "Statistics"
+msgstr "Statistiken"
+
+#: settings.php:129
+#, php-format
+#@ post-worktime-logger
+msgid "Top %s posts (worktime)"
+msgstr "Top %s Artikel (Arbeitszeit)"
+
+#: settings.php:144
+#@ post-worktime-logger
+msgid "Minutes"
+msgstr "Minuten"
+
+#: settings.php:170
+#@ post-worktime-logger
+msgid "No data."
+msgstr "Keine Daten."
+
+#: settings.php:180
+#@ post-worktime-logger
+msgid "Post Worktime Logger Settings"
+msgstr "Post Worktime Logger Einstellungen"
+
+#: settings.php:186
+#@ default
+msgid "Save Changes"
+msgstr ""
+
+#: settings.php:190
+#@ post-worktime-logger
+msgid "Reset whole worktime"
+msgstr "Gesamte Arbeitszeit zurücksetzen"
+
+#: settings.php:209
+#@ post-worktime-logger
+msgid "General"
+msgstr "Allgemein"
+
+#: settings.php:216
+#@ post-worktime-logger
+msgid "Enable control buttons"
+msgstr "Aktiviere Steuer-Buttons"
+
+#: settings.php:224
+#@ post-worktime-logger
+msgid "Inactivity Timeout"
+msgstr "Zeitunterbrechung durch Inaktivität"
+
+#: settings.php:272
+#@ post-worktime-logger
+msgid "This will allow you to pause, resume and reset the worktime."
+msgstr "Erlaubt Ihnen das pausieren, fortfahren und zurücksetzen der Arbeitszeit."
+
+#: settings.php:290
+#@ post-worktime-logger
+msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
+msgstr "Erlaubt Ihnen die maximale Zeit der Abwesenheit in Minuten anzugeben, bis der Timer pausiert."
 
