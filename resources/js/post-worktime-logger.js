@@ -45,8 +45,7 @@ jQuery(document).ready(function () {
      */
     function pwlSendPing()
     {
-        if (pwlCheckActivity())
-        {
+        if (pwlCheckActivity()) {
             jQuery.post(
                 ajaxurl,
                 {
@@ -151,5 +150,13 @@ jQuery(document).ready(function () {
     });
 
     if (currentPostId) setInterval(pwlSendPing, 10000);
-    if (frontendTimeContainer) setInterval(pwlWorktime, 1000);
+    if ( frontendTimeContainer ) {
+        setInterval(pwlWorktime, 1000);
+    }
+
+    if ( 'on' === pwl.disableAutoStart ) {
+        pauseButton.toggle();
+        resumeButton.toggle();
+        enablePause = true;
+    }
 });

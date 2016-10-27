@@ -188,11 +188,7 @@ class PostWorktimeLoggerSettingsPage
                 submit_button(__("Save Changes"), "primary", "submit", false);
                 ?>
             </form>
-<<<<<<< Updated upstream
-            <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>">
-=======
             <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>" onsubmit="return confirm('<?php echo $confirmMessage; ?>');">
->>>>>>> Stashed changes
                 <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", self::PWL_TEXT_DOMAIN); ?></button>
             </form>
         </div>
@@ -226,6 +222,14 @@ class PostWorktimeLoggerSettingsPage
         );
 
         add_settings_field(
+           'disableAutoStart',
+            __('Disable Auto Start', "post-worktime-logger"),
+            array( $this, 'disableAutoStartCallback'),
+            'post-worktime-logger-settings',
+            'general'
+        );
+
+        add_settings_field(
            'inactivityTimeout',
             __('Inactivity Timeout', self::PWL_TEXT_DOMAIN),
             array( $this, 'inactivityTimeoutCallback'),
@@ -247,7 +251,12 @@ class PostWorktimeLoggerSettingsPage
         if( isset( $_input['enableControlButtons'] ) )
         {
             $newInput['enableControlButtons'] = $_input['enableControlButtons'];
+        }
 
+        if( isset( $_input['disableAutoStart'] ) )
+        {
+            $disableAutoStart = sanitize_text_field( wp_unslash( $_input['disableAutoStart'] ) );
+            $newInput['disableAutoStart'] = $disableAutoStart;
         }
 
         if( isset( $_input['inactivityTimeout'] ) )
@@ -263,8 +272,8 @@ class PostWorktimeLoggerSettingsPage
     }
 
     /**
-     * Get the settings option array and print one of its values
-     */
+ * Get the settings option array and print one of its values
+ */
     public function enableControlButtonsCallback()
     {
         if (isset($this->options['enableControlButtons']))
@@ -274,8 +283,27 @@ class PostWorktimeLoggerSettingsPage
         else $enableControlButtons = null;
 
         ?>
-            <input type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
-            <p class="description"><?php esc_html_e( "This will allow you to pause, resume and reset the worktime.", self::PWL_TEXT_DOMAIN ); ?></p>
+        <input type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
+        <p class="description"><?php esc_html_e( "This will allow you to pause, resume and reset the worktime.", "post-worktime-logger" ); ?></p>
+        <?php
+    }
+
+    /**
+     * Get the settings option array and print one of its values
+     */
+    public function disableAutoStartCallback()
+    {
+        if (isset($this->options['disableAutoStart']))
+        {
+            $disableAutoStart = $this->options['disableAutoStart'];
+        }
+        else $disableAutoStart = null;
+
+        ?>
+        <input type="checkbox" id="disableAutoStart" name="post-worktime-logger-options[disableAutoStart]"  <?php checked($disableAutoStart, 'on' ); ?> />
+        <p class="description">
+            <?php esc_html_e( "Activate this to prevent the time from starting automatically on post editing.", "post-worktime-logger" ); ?>
+        </p>
         <?php
     }
 

@@ -6,7 +6,9 @@
 
 Post Worktime Logger is a WordPress plugin that allows you to track the time you worked on each post.
 
-You can find more information here. https://wordpress.org/plugins/post-worktime-logger/
+You can find more information here. https://wordpress.org/plugins/post-worktime-logger/.
+
+German changelog and tutorials of ths plugin can be found on [DerPade](http://www.derpade.de/series/post-worktime-logger/).
 
 ## What does it do?
 
@@ -40,6 +42,12 @@ There is a missing feature? Please create an issue for that.
 If you have found a bug, please create an issue or feel free to fix it and make a pull request for that fix.
 
 ## Changelog
+
+### 1.3.0 
+* Implemented an own page for Post Worktime Logger.
+* Implemented an options page with some nice options and a reset button.
+* Implemented a statistics page to show the top 25 posts (worktime.
+* Improved documentation of the plugin.
 
 ###1.2.2
 * Fixed a bug, that no worktime was saved anymore in admin area.
