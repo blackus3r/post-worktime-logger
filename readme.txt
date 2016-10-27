@@ -34,12 +34,24 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 == Screenshots ==
 
 1. This is the meta box right to the post editor.
-1. This is the posts page.
-1. These are the widget options.
-1. This is the control panel in frontend for logged in users.
-1. This is the widget in frontend for not logged in users.
-1. This is the statistics page which displays the top 25 posts.
-1. This is the settings page.
+Post Worktime Logger will add a new interactive box to your edit screen, allowing you to keep track of how much time you spend on your alterations.
+You may stop the current counting whenever you need to do something else, or reset it altogether, for example, if you want to restart your work from scratch.
+
+2. This is the posts page.
+The plugin changes your post list, granting you an additional column that shows the time spent on any particular post.
+
+3. These are the widget options.
+
+4. This is the control panel in frontend for logged in users.
+Post Worktime Logger will let you add a configurable widget to your site, similar to the meta box on the Edit Post screen.
+You are able to choose its display name, and whether the widget will be exposed or not to non-logged visitors.
+
+5. This is the widget in frontend for not logged in users.
+
+6. This is the statistics page which displays the top 25 posts.
+The plugin also offers an indicator that allows you to know which articles you spent more time working on. To check it, just go to your dashboard, it will be the first option under the plugin entry in the sidebar.
+
+7. This is the settings page.
 
 == Changelog ==
 
