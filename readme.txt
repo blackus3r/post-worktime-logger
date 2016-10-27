@@ -7,7 +7,6 @@ Tested up to: 4.6
 Stable tag: 1.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
-German changelog and tutorials of ths plugin can be found on [DerPade](http://www.derpade.de/series/post-worktime-logger/)
 
 Post Worktime Logger is a WordPress plugin that allows you to track the time you worked on each post.
 
@@ -17,7 +16,8 @@ Do you ever wanted to know, how long did you worked on this post?
 Let Post Worktime Logger fill this gap!
 Post Worktime Logger will tell you how much time did you spend in a WordPress post. It will only count the time if you are actively working in the post, so don't worry if you have to leave the computer alone!
 
-This project is actively maintained on [Github](https://github.com/blackus3r/post-worktime-logger)
+This project is actively maintained on [Github](https://github.com/blackus3r/post-worktime-logger).
+German changelog and tutorials of ths plugin can be found on [DerPade](http://www.derpade.de/series/post-worktime-logger/).
 
 == Installation ==
 
