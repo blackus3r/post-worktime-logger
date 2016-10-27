@@ -4,7 +4,7 @@ Donate link:
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
-Stable tag: 1.2.3
+Stable tag: 1.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -43,6 +43,12 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 1. This is the settings page.
 
 == Changelog ==
+
+= 1.3.0 =
+* Implemented an own page for Post Worktime Logger.
+* Implemented an options page with some nice options and a reset button.
+* Implemented a statistics page to show the top 25 posts (worktime.
+* Improved documentation of the plugin.
 
 = 1.2.3 =
 * Refactored the calculation of the worktime. This should be now more precise.
