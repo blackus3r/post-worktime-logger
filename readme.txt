@@ -26,8 +26,6 @@ This project is actively maintained on [Github](https://github.com/blackus3r/pos
 
 == Usage ==
 
-## Usage
-
 Post Worktime Logger will start to track the time you spend in each post automatically as soon as you install it. You'll find the time in various places, such as the meta box when you're editing a page, or the posts list.
 
 In the plugin settings you can edit the title of the plugin, and enable or disable if you want to let non-logged users to see it.
