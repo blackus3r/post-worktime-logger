@@ -300,7 +300,7 @@ class PostWorktimeLoggerSettingsPage
         ?>
         <input type="checkbox" id="disableAutoStart" name="post-worktime-logger-options[disableAutoStart]"  <?php checked($disableAutoStart, 'on' ); ?> />
         <p class="description">
-            <?php esc_html_e( "Activate this to prevent the time from starting automatically on post editing", "post-worktime-logger" ); ?>
+            <?php esc_html_e( "Activate this to prevent the time from starting automatically on post editing.", "post-worktime-logger" ); ?>
         </p>
         <?php
     }
