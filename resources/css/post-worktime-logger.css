@@ -10,6 +10,7 @@
 
 #pwl-reset-button{
     margin-left: 5px;
+    float: right;
 }
 
 .pwl-reset-form{
