@@ -40,6 +40,9 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 1. This is the statistics page which displays the top 25 posts.
 1. This is the settings page.
 
+== Donation ==
+You can donate to this project via PayPal by visiting this page: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
+
 == Changelog ==
 
 = 1.3.0 =
