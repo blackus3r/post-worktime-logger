@@ -1,6 +1,6 @@
 === Post Worktime Logger===
 Contributors: filme-blog
-Donate link:
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
