@@ -1,6 +1,6 @@
 === Post Worktime Logger===
 Contributors: filme-blog
-Donate link:
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
@@ -40,6 +40,9 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 5. This is the widget in frontend for not logged in users.
 6. This is the statistics page which displays the top 25 posts. The plugin also offers an indicator that allows you to know which articles you spent more time working on. To check it, just go to your dashboard, it will be the first option under the plugin entry in the sidebar.
 7. This is the settings page.
+
+== Donation ==
+You can donate to this project via PayPal by visiting this page: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 
 == Changelog ==
 
