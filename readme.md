@@ -41,6 +41,10 @@ There is a missing feature? Please create an issue for that.
 
 If you have found a bug, please create an issue or feel free to fix it and make a pull request for that fix.
 
+## Donation
+You can donate to this project via
+[PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A).
+
 ## Changelog
 
 ### 1.3.0 
