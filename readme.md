@@ -101,6 +101,21 @@ You can donate to this project via
 ###1.0.0
 * First Version
 
+## Development Setup
+
+To develop this plugin you can use the provided Dockerfile and docker-compose.yml
+This will create a Wordpress 4.6.1 instance with the plugin installed (but not yet activated) and a mysql database.
+
+```
+# start environment
+$ docker-compose up
+```
+
+afterwards open http://localhost:8080 in your browser.
+
+You will have to setup wordpress with some simple steps (like give it a name and set a user and password) and also activate
+the plugin via plugins menu.
+
 ## License
 
 This program is free software: you can redistribute it and/or modify
