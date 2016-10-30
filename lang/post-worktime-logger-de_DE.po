@@ -68,7 +68,7 @@ msgstr "Ein Widget welches im Frontend das Admin Arbeitszeiten Widget für einge
 #: widget.php:87
 #@ post-worktime-logger
 msgid "Title:"
-msgstr "Title:"
+msgstr "Titel:"
 
 #: widget.php:91
 #@ post-worktime-logger
@@ -111,7 +111,7 @@ msgstr "Einstellungen"
 #: settings.php:101
 #@ default
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "Sie verfügen nicht über die notwendigen Berechtigungen um auf diese Seite zuzugreifen."
 
 #: settings.php:78
 #: settings.php:128
@@ -143,7 +143,7 @@ msgstr "Post Worktime Logger Einstellungen"
 #: settings.php:186
 #@ default
 msgid "Save Changes"
-msgstr ""
+msgstr "Änderungen speichern"
 
 #: settings.php:190
 #@ post-worktime-logger
