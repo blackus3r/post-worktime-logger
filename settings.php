@@ -11,6 +11,7 @@
  */
 class PostWorktimeLoggerSettingsPage
 {
+    const PWL_TEXT_DOMAIN = "post-worktime-logger";
     /**
      * Holds the values to be used in the fields callbacks
      */
@@ -124,8 +125,17 @@ class PostWorktimeLoggerSettingsPage
                 $posts_worktimes[] = round((get_post_meta($tPost->ID, "post-worktime", true)/60), 0);
             }
 
+            $total_posts_worktime = array_sum($posts_worktimes);
+            $total_posts_worktime_hours = floor($total_posts_worktime / 60);
+            $total_posts_worktime_minutes = $total_posts_worktime % 60;
+
             echo '<div class="wrap">';
             echo "<h1>".__("Statistics", "post-worktime-logger")."</h1>";
+            if (0 == $total_posts_worktime_hours) {
+                echo '<p class="description">' . sprintf(__("Total worktime on posts: %d minutes", self::PWL_TEXT_DOMAIN), $total_posts_worktime_minutes) . '</p>';
+            } else {
+                echo '<p class="description">' . sprintf(__("Total worktime on posts: %d hours, %d minutes", self::PWL_TEXT_DOMAIN), $total_posts_worktime_hours, $total_posts_worktime_minutes) . '</p>';
+            }
             echo '<h2>'.sprintf(__("Top %s posts (worktime)", "post-worktime-logger"), $numOfPosts).'</h2>';
             echo '<div id="chartsContainer" style="width:90%;">';
             echo '<canvas id="pwlTopWorktimePosts" width="400" height="200"></canvas>';
