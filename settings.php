@@ -11,6 +11,7 @@
  */
 class PostWorktimeLoggerSettingsPage
 {
+    const PWL_TEXT_DOMAIN = "post-worktime-logger";
     /**
      * Holds the values to be used in the fields callbacks
      */
@@ -39,7 +40,7 @@ class PostWorktimeLoggerSettingsPage
         }
         ?>
         <div class="updated">
-            <p><?php printf(__( 'Resetted worktime for %s posts.', 'post-worktime-logger' ), $_GET['pwlResetPostsNumber']); ?></p>
+            <p><?php printf(__( 'Resetted worktime for %s posts.', self::PWL_TEXT_DOMAIN ), $_GET['pwlResetPostsNumber']); ?></p>
         </div>
         <?php
     }
@@ -75,8 +76,8 @@ class PostWorktimeLoggerSettingsPage
     public function registerSettingsPage()
     {
         add_menu_page(
-            __("Statistics", "post-worktime-logger"),
-            __("Worktime Logger", "post-worktime-logger"),
+            __("Statistics", self::PWL_TEXT_DOMAIN),
+            __("Worktime Logger", self::PWL_TEXT_DOMAIN),
             'manage_options',
             "post-worktime-logger-statistics",
             array($this, "createAdminStatisticsPage")
@@ -84,8 +85,8 @@ class PostWorktimeLoggerSettingsPage
 
         add_submenu_page(
             "post-worktime-logger-statistics",
-            __("Settings", "post-worktime-logger"),
-            __("Settings", "post-worktime-logger"),
+            __("Settings", self::PWL_TEXT_DOMAIN),
+            __("Settings", self::PWL_TEXT_DOMAIN),
             'manage_options',
             'post-worktime-logger-settings',
             array($this, "createAdminSettingsPage")
@@ -125,8 +126,8 @@ class PostWorktimeLoggerSettingsPage
             }
 
             echo '<div class="wrap">';
-            echo "<h1>".__("Statistics", "post-worktime-logger")."</h1>";
-            echo '<h2>'.sprintf(__("Top %s posts (worktime)", "post-worktime-logger"), $numOfPosts).'</h2>';
+            echo "<h1>".__("Statistics", self::PWL_TEXT_DOMAIN)."</h1>";
+            echo '<h2>'.sprintf(__("Top %s posts (worktime)", self::PWL_TEXT_DOMAIN), $numOfPosts).'</h2>';
             echo '<div id="chartsContainer" style="width:90%;">';
             echo '<canvas id="pwlTopWorktimePosts" width="400" height="200"></canvas>';
             echo '</div>';
@@ -141,7 +142,7 @@ class PostWorktimeLoggerSettingsPage
                         data: {
                             labels: " . (json_encode($posts_titles,JSON_HEX_QUOT)) . ",
                             datasets: [{
-                                label: '".__('Minutes', "post-worktime-logger")."',
+                                label: '".__('Minutes', self::PWL_TEXT_DOMAIN)."',
                                 generateLabels: null,
                                 data: [" . implode(',', $posts_worktimes) . "],
                                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -167,7 +168,7 @@ class PostWorktimeLoggerSettingsPage
 
             return;
         }
-        else _e('No data.', "post-worktime-logger");
+        else _e('No data.', self::PWL_TEXT_DOMAIN);
     }
 
     /**
@@ -175,9 +176,10 @@ class PostWorktimeLoggerSettingsPage
      */
     public function createAdminSettingsPage()
     {
+        $confirmMessage = __("Reset whole worktime", self::PWL_TEXT_DOMAIN).'?';
         ?>
         <div class="wrap">
-            <h1><?php echo __("Post Worktime Logger Settings", "post-worktime-logger"); ?></h1>
+            <h1><?php echo __("Post Worktime Logger Settings", self::PWL_TEXT_DOMAIN); ?></h1>
             <form class="pwl-reset-form" method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
@@ -186,8 +188,8 @@ class PostWorktimeLoggerSettingsPage
                 submit_button(__("Save Changes"), "primary", "submit", false);
                 ?>
             </form>
-            <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>">
-                <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", "post-worktime-logger"); ?></button>
+            <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>" onsubmit="return confirm('<?php echo $confirmMessage; ?>');">
+                <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", self::PWL_TEXT_DOMAIN); ?></button>
             </form>
         </div>
         <?php
@@ -206,14 +208,14 @@ class PostWorktimeLoggerSettingsPage
 
         add_settings_section(
             'general', // ID
-            __('General', "post-worktime-logger"),
+            __('General', self::PWL_TEXT_DOMAIN),
             null, // Callback
             'post-worktime-logger-settings' // Page
         );
 
         add_settings_field(
            'enableControlButtons',
-            __('Enable control buttons', "post-worktime-logger"),
+            __('Enable control buttons', self::PWL_TEXT_DOMAIN),
             array( $this, 'enableControlButtonsCallback'),
             'post-worktime-logger-settings',
             'general'
@@ -229,7 +231,7 @@ class PostWorktimeLoggerSettingsPage
 
         add_settings_field(
            'inactivityTimeout',
-            __('Inactivity Timeout', "post-worktime-logger"),
+            __('Inactivity Timeout', self::PWL_TEXT_DOMAIN),
             array( $this, 'inactivityTimeoutCallback'),
             'post-worktime-logger-settings',
             'general'
@@ -319,7 +321,7 @@ class PostWorktimeLoggerSettingsPage
 
         ?>
         <input type="text" size="3" id="inactivityTimeout" name="post-worktime-logger-options[inactivityTimeout]"  value="<?php echo esc_html( $inactivityTimeout ); ?>" />
-        <p class="description"><?php esc_html_e( "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.", "post-worktime-logger"); ?></p>
+        <p class="description"><?php esc_html_e( "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.", self::PWL_TEXT_DOMAIN); ?></p>
         <?php
     }
 }
