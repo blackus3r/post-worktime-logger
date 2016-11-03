@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.2.3\n"
+"Project-Id-Version: Post Worktime Logger v1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-26 21:28:41+0000\n"
+"PO-Revision-Date: 2016-11-03 10:54:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,158 +20,203 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:136
+#: post-worktime-logger.php:139
 #@ post-worktime-logger
 msgid "Post Worktime"
 msgstr "Temps de travail sur l&apos;article"
 
-#: post-worktime-logger.php:97
+#: post-worktime-logger.php:100
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
 msgstr "Veuillez sauvegarder l&apos;article pour pouvoir suivre le temps passé dessus."
 
-#: post-worktime-logger.php:115
+#: post-worktime-logger.php:118
 #@ post-worktime-logger
 msgid "Total worktime"
 msgstr "Total du temps passé"
 
-#: post-worktime-logger.php:114
+#: post-worktime-logger.php:117
 #@ post-worktime-logger
 msgid "Current worktime"
 msgstr ""
 
-#: post-worktime-logger.php:121
+#: post-worktime-logger.php:124
 #@ post-worktime-logger
 msgid "Pause"
 msgstr ""
 
-#: post-worktime-logger.php:122
+#: post-worktime-logger.php:125
 #@ post-worktime-logger
 msgid "Resume"
 msgstr ""
 
-#: post-worktime-logger.php:123
+#: post-worktime-logger.php:126
 #@ post-worktime-logger
 msgid "Reset"
 msgstr ""
 
-#: post-worktime-logger.php:150
+#: post-worktime-logger.php:153
 #@ post-worktime-logger
 msgid "Worktime"
 msgstr ""
 
-#: widget.php:20
+#: widget.php:22
 #@ post-worktime-logger
 msgid "A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users."
 msgstr ""
 
-#: widget.php:87
+#: widget.php:92
 #@ post-worktime-logger
 msgid "Title:"
 msgstr ""
 
-#: widget.php:91
+#: widget.php:96
 #@ post-worktime-logger
 msgid "Display widget for not logged in users"
 msgstr ""
 
-#: widget.php:95
+#: widget.php:105
 #@ post-worktime-logger
 msgid "Pre text:"
 msgstr ""
 
-#: widget.php:97
-#: widget.php:102
+#: widget.php:107
+#: widget.php:112
 #@ post-worktime-logger
 msgid "This will only appear if 'Display widget for not logged in users' is enabled."
 msgstr ""
 
-#: widget.php:100
+#: widget.php:110
 #@ post-worktime-logger
 msgid "After text:"
 msgstr ""
 
-#: settings.php:42
+#: settings.php:43
 #, php-format
 #@ post-worktime-logger
 msgid "Resetted worktime for %s posts."
 msgstr ""
 
-#: settings.php:79
+#: settings.php:80
 #@ post-worktime-logger
 msgid "Worktime Logger"
 msgstr ""
 
-#: settings.php:87
 #: settings.php:88
+#: settings.php:89
 #@ post-worktime-logger
 msgid "Settings"
 msgstr ""
 
-#: settings.php:101
+#: settings.php:102
 #@ default
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: settings.php:78
-#: settings.php:128
+#: settings.php:79
+#: settings.php:133
+#: settings.php:252
 #@ post-worktime-logger
 msgid "Statistics"
 msgstr ""
 
-#: settings.php:129
+#: settings.php:134
+#: settings.php:140
 #, php-format
 #@ post-worktime-logger
 msgid "Top %s posts (worktime)"
 msgstr ""
 
-#: settings.php:144
+#: settings.php:155
 #@ post-worktime-logger
 msgid "Minutes"
 msgstr ""
 
-#: settings.php:170
+#: settings.php:181
 #@ post-worktime-logger
 msgid "No data."
 msgstr ""
 
-#: settings.php:180
+#: settings.php:192
 #@ post-worktime-logger
 msgid "Post Worktime Logger Settings"
 msgstr ""
 
-#: settings.php:186
+#: settings.php:198
 #@ default
 msgid "Save Changes"
 msgstr ""
 
-#: settings.php:190
+#: settings.php:189
+#: settings.php:202
 #@ post-worktime-logger
 msgid "Reset whole worktime"
 msgstr ""
 
-#: settings.php:209
+#: settings.php:221
 #@ post-worktime-logger
 msgid "General"
 msgstr ""
 
-#: settings.php:216
+#: settings.php:228
 #@ post-worktime-logger
 msgid "Enable control buttons"
 msgstr ""
 
-#: settings.php:224
+#: settings.php:244
 #@ post-worktime-logger
 msgid "Inactivity Timeout"
 msgstr ""
 
-#: settings.php:272
+#: settings.php:321
 #@ post-worktime-logger
 msgid "This will allow you to pause, resume and reset the worktime."
 msgstr ""
 
-#: settings.php:290
+#: settings.php:358
 #@ post-worktime-logger
 msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
+msgstr ""
+
+#: settings.php:136
+#, php-format
+#@ post-worktime-logger
+msgid "Total worktime on posts: %d minutes"
+msgstr ""
+
+#: settings.php:138
+#, php-format
+#@ post-worktime-logger
+msgid "Total worktime on posts: %d hours, %d minutes"
+msgstr ""
+
+#: settings.php:236
+#@ post-worktime-logger
+msgid "Disable Auto Start"
+msgstr ""
+
+#: settings.php:259
+#@ post-worktime-logger
+msgid "number of posts"
+msgstr ""
+
+#: settings.php:339
+#@ post-worktime-logger
+msgid "Activate this to prevent the time from starting automatically on post editing."
+msgstr ""
+
+#: settings.php:376
+#@ post-worktime-logger
+msgid "Specify this amount of posts to be displayed on the statistics page top worktime chart"
+msgstr ""
+
+#: widget.php:100
+#@ post-worktime-logger
+msgid "Disable frontend time tracking"
+msgstr ""
+
+#: widget.php:102
+#@ post-worktime-logger
+msgid "This will only affect logged in users."
 msgstr ""
 
