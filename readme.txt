@@ -1,10 +1,10 @@
 === Post Worktime Logger===
 Contributors: filme-blog
-Donate link:
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
 Requires at least: 2.3.1
 Tested up to: 4.6
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -16,7 +16,8 @@ Do you ever wanted to know, how long did you worked on this post?
 Let Post Worktime Logger fill this gap!
 Post Worktime Logger will tell you how much time did you spend in a WordPress post. It will only count the time if you are actively working in the post, so don't worry if you have to leave the computer alone!
 
-This project is actively maintained on [Github](https://github.com/blackus3r/post-worktime-logger)
+This project is actively maintained on [Github](https://github.com/blackus3r/post-worktime-logger).
+German changelog and tutorials of ths plugin can be found on [DerPade](http://www.derpade.de/series/post-worktime-logger/).
 
 == Installation ==
 
@@ -32,15 +33,31 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 == Screenshots ==
 
-1. This is the meta box right to the post editor.
-1. This is the posts page.
+1. This is the meta box right to the post editor. Post Worktime Logger will add a new interactive box to your edit screen, allowing you to keep track of how much time you spend on your alterations. You may stop the current counting whenever you need to do something else, or reset it altogether, for example, if you want to restart your work from scratch.
+1. This is the posts page. The plugin changes your post list, granting you an additional column that shows the time spent on any particular post.
 1. These are the widget options.
-1. This is the control panel in frontend for logged in users.
+1. This is the control panel in frontend for logged in users. Post Worktime Logger will let you add a configurable widget to your site, similar to the meta box on the Edit Post screen. You are able to choose its display name, and whether the widget will be exposed or not to non-logged visitors.
 1. This is the widget in frontend for not logged in users.
-1. This is the statistics page which displays the top 25 posts.
+1. This is the statistics page which displays the top 25 posts. The plugin also offers an indicator that allows you to know which articles you spent more time working on. To check it, just go to your dashboard, it will be the first option under the plugin entry in the sidebar.
 1. This is the settings page.
 
+== Donation ==
+You can donate to this project via PayPal by visiting this page: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
+
 == Changelog ==
+
+= 1.4.0 =
+* Implemented a checkbox in the settings to prevent the timer from autostart.
+* Improved code and translation engine.
+* Added total worktime in statistics page.
+* Implemented the option to change the amount of posts in statistic.
+* Implemented a confirm question before resetting the whole worktime.
+* Implemented widget option to disable frontend time tracking.
+* Added a link to the developers blog, where you can find more information about the plugin in german.
+* Added brazilian portuguese translation.
+* Added greek translation.
+* Added italian translation.
+* Added donation link.
 
 = 1.3.0 =
 * Implemented an own page for Post Worktime Logger.

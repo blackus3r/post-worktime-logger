@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Post Worktime Logger v1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-03 10:54:30+0000\n"
+"PO-Revision-Date: 2016-11-03 10:54:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Language: \n"
 "X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -20,163 +20,163 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:139
-#@ post-worktime-logger
-msgid "Post Worktime"
-msgstr "Tempo de Postagem"
-
 #: post-worktime-logger.php:100
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
-msgstr "É necessário salvar a postagem para que possamos registrar o tempo gasto."
+msgstr "Devi salvare il post per abilitare il tracking del tempo."
 
-#: post-worktime-logger.php:118
+#: post-worktime-logger.php:139
 #@ post-worktime-logger
-msgid "Total worktime"
-msgstr "Tempo total"
+msgid "Post Worktime"
+msgstr "Tempo di lavoro sul post"
 
 #: post-worktime-logger.php:117
 #@ post-worktime-logger
 msgid "Current worktime"
-msgstr "Tempo atual"
+msgstr "Tempo di lavoro corrente"
+
+#: post-worktime-logger.php:118
+#@ post-worktime-logger
+msgid "Total worktime"
+msgstr "Tempo di lavoro totale"
 
 #: post-worktime-logger.php:124
 #@ post-worktime-logger
 msgid "Pause"
-msgstr "Pausar"
+msgstr "Pausa"
 
 #: post-worktime-logger.php:125
 #@ post-worktime-logger
 msgid "Resume"
-msgstr "Continuar"
+msgstr "Riprendi"
 
 #: post-worktime-logger.php:126
 #@ post-worktime-logger
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Azzera"
 
 #: post-worktime-logger.php:153
 #@ post-worktime-logger
 msgid "Worktime"
-msgstr "Tempo de postagem"
+msgstr "Tempo di lavoro"
 
 #: widget.php:22
 #@ post-worktime-logger
 msgid "A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users."
-msgstr "Uma widget de frontend para exibir o tempo trabalhado pelo administrador para usuários logados ou o tempo de postagem do post atual para usuários não logados."
+msgstr "Un widget nel frontend per visualizzare il tempo di lavoro (admin) per gli utenti loggati, o il tempo di lavoro per l’articolo corrente per gli utenti non loggati."
 
 #: widget.php:92
 #@ post-worktime-logger
 msgid "Title:"
-msgstr "Título:"
+msgstr "Titolo:"
 
 #: widget.php:96
 #@ post-worktime-logger
 msgid "Display widget for not logged in users"
-msgstr "Widget para usuários não logados"
+msgstr "Mostra widget per utenti non loggati"
 
 #: widget.php:105
 #@ post-worktime-logger
 msgid "Pre text:"
-msgstr "Texto prévio: "
+msgstr "Testo prima:"
 
 #: widget.php:107
 #: widget.php:112
 #@ post-worktime-logger
 msgid "This will only appear if 'Display widget for not logged in users' is enabled."
-msgstr "Isto somente aparecerá se 'Mini aplicativo para usuários não logados' estiver habilitado."
+msgstr "Questo apparirà solo se 'Mostra widget per utenti non loggati' è abilitato."
 
 #: widget.php:110
 #@ post-worktime-logger
 msgid "After text:"
-msgstr "Texto posterior: "
+msgstr "Testo dopo:"
 
 #: settings.php:43
 #, php-format
 #@ post-worktime-logger
 msgid "Resetted worktime for %s posts."
-msgstr "Tempo de postagem reiniciado para %s posts."
+msgstr "Azzerato il tempo di lavoro per %s articoli."
 
 #: settings.php:80
 #@ post-worktime-logger
 msgid "Worktime Logger"
-msgstr "Registro de Tempo de Postagem"
+msgstr "Worktime Logger"
 
 #: settings.php:88
 #: settings.php:89
 #@ post-worktime-logger
 msgid "Settings"
-msgstr "Configurações"
+msgstr "Impostazioni"
 
 #: settings.php:102
 #@ default
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Você não possui permissões suficientes para acessar essa página."
+msgstr "Non si dispone dei permessi sufficienti per accedere a questa pagina."
 
 #: settings.php:79
 #: settings.php:133
 #: settings.php:252
 #@ post-worktime-logger
 msgid "Statistics"
-msgstr "Estatísticas"
+msgstr "Statistiche"
 
 #: settings.php:134
 #: settings.php:140
 #, php-format
 #@ post-worktime-logger
 msgid "Top %s posts (worktime)"
-msgstr "Top %s posts (Tempo de Postagem)"
+msgstr "Top %s articoli (tempo di lavoro)"
 
 #: settings.php:155
 #@ post-worktime-logger
 msgid "Minutes"
-msgstr "Minutos"
+msgstr "Minuti"
 
 #: settings.php:181
 #@ post-worktime-logger
 msgid "No data."
-msgstr "Sem dados."
+msgstr "Non ci sono dati disponibili."
 
 #: settings.php:192
 #@ post-worktime-logger
 msgid "Post Worktime Logger Settings"
-msgstr "Configurações do Registro de Tempo de Postagem"
+msgstr "Impostazioni di Post Worktime Logger"
 
 #: settings.php:198
 #@ default
 msgid "Save Changes"
-msgstr "Salvar Alterações"
+msgstr "Salva Modifiche"
 
 #: settings.php:189
 #: settings.php:202
 #@ post-worktime-logger
 msgid "Reset whole worktime"
-msgstr "Reiniciar todo o tempo de postagem"
+msgstr "Azzera tutto il tempo di lavoro"
 
 #: settings.php:221
 #@ post-worktime-logger
 msgid "General"
-msgstr "Geral"
+msgstr "Generale"
 
 #: settings.php:228
 #@ post-worktime-logger
 msgid "Enable control buttons"
-msgstr "Habilitar botões de controle"
+msgstr "Abilita i bottoni di controllo"
 
 #: settings.php:244
 #@ post-worktime-logger
 msgid "Inactivity Timeout"
-msgstr "Intervalo de Inatividade"
+msgstr "Timeout per inattività"
 
 #: settings.php:321
 #@ post-worktime-logger
 msgid "This will allow you to pause, resume and reset the worktime."
-msgstr "Isto permitirá que pause, continue e reinicie o tempo de postagem."
+msgstr "Permette di mettere in pausa, riprendere ed azzerare il tempo di lavoro."
 
 #: settings.php:358
 #@ post-worktime-logger
 msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
-msgstr "Essa opção permite que seja especificado um certo número de minutos que podem passar sem atividade antes do contador pausar."
+msgstr "Questa opzione permette di specificare il numero di minuti di inattività prima che il timer venga messo in pausa automaticamente."
 
 #: settings.php:136
 #, php-format

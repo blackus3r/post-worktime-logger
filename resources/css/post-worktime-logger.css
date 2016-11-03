@@ -13,10 +13,9 @@
 }
 
 .pwl-reset-form{
-    display:inline-block;
-    float:left;
+    display:block;
 }
 
 .pwl-reset-form .button.danger{
-    margin-top: 110px;
+    margin-top: 50px;
 }

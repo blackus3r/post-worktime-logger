@@ -6,7 +6,9 @@
 
 Post Worktime Logger is a WordPress plugin that allows you to track the time you worked on each post.
 
-You can find more information here. https://wordpress.org/plugins/post-worktime-logger/
+You can find more information here. https://wordpress.org/plugins/post-worktime-logger/.
+
+German changelog and tutorials of ths plugin can be found on [DerPade](http://www.derpade.de/series/post-worktime-logger/).
 
 ## What does it do?
 
@@ -26,10 +28,33 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 ## Screenshots
 
+### Edit Post
+
+Post Worktime Logger will add a new interactive box to your edit screen, allowing you to keep track of how much time you spend on your alterations:
+
 ![meta_box](screenshots/screenshot-1.png)
+
+You may stop the current counting whenever you need to do something else, or reset it altogether, for example, if you want to restart your work from scratch.
+
+### Post List
+
+The plugin changes your post list, granting you an additional column that shows the time spent on any particular post:
+
 ![list](screenshots/screenshot-2.png)
+
+### Statistics
+
+The plugin also offers an indicator that allows you to know which articles you spent more time working on. To check it, just go to your dashboard, it will be the first option under the plugin entry in the sidebar:
+
 ![statistics](screenshots/screenshot-6.png)
-![control_panel](screenshots/screenshot-4.png)
+
+### Plugin Widget
+
+Post Worktime Logger will let you add a configurable widget to your site, similar to the meta box on the Edit Post screen:
+
+![site](screenshots/screenshot-4.png)
+
+You are able to choose its display name, and whether the widget will be exposed or not to non-logged visitors.
 
 ## Suggest new features
 
@@ -55,9 +80,26 @@ To check a file or directory, run the following command:
 
 If you have found a bug, please create an issue or feel free to fix it and make a pull request for that fix.
 
+## Donation
+You can donate to this project via
+[PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A).
+
 ## Changelog
 
-### 1.3.0 
+### 1.4.0
+* Implemented a checkbox in the settings to prevent the timer from autostart.
+* Improved code and translation engine.
+* Added total worktime in statistics page.
+* Implemented the option to change the amount of posts in statistic.
+* Implemented a confirm question before resetting the whole worktime.
+* Implemented widget option to disable frontend time tracking.
+* Added a link to the developers blog, where you can find more information about the plugin in german. 
+* Added brazilian portuguese translation.
+* Added greek translation.
+* Added italian translation.
+* Added donation link. 
+
+### 1.3.0
 * Implemented an own page for Post Worktime Logger.
 * Implemented an options page with some nice options and a reset button.
 * Implemented a statistics page to show the top 25 posts (worktime.
@@ -87,6 +129,21 @@ If you have found a bug, please create an issue or feel free to fix it and make 
 
 ###1.0.0
 * First Version
+
+## Development Setup
+
+To develop this plugin you can use the provided Dockerfile and docker-compose.yml
+This will create a Wordpress 4.6.1 instance with the plugin installed (but not yet activated) and a mysql database.
+
+```
+# start environment
+$ docker-compose up
+```
+
+afterwards open http://localhost:8080 in your browser.
+
+You will have to setup wordpress with some simple steps (like give it a name and set a user and password) and also activate
+the plugin via plugins menu.
 
 ## License
 

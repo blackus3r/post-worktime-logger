@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Post Worktime Logger v1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-03 10:54:30+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2016-11-03 10:54:20+0000\n"
+"Last-Translator: Modestos Kaffes <modkaffes@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,163 +20,163 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:139
-#@ post-worktime-logger
-msgid "Post Worktime"
-msgstr "Tempo de Postagem"
-
 #: post-worktime-logger.php:100
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
-msgstr "É necessário salvar a postagem para que possamos registrar o tempo gasto."
+msgstr "Θα πρέπει να αποθηκεύσετε τη δημοσίευση, πριν μπορούμε να παρακολουθήσουμε το χρόνο."
 
-#: post-worktime-logger.php:118
+#: post-worktime-logger.php:139
 #@ post-worktime-logger
-msgid "Total worktime"
-msgstr "Tempo total"
+msgid "Post Worktime"
+msgstr "Χρόνος εργασίας στη δημοσίευση"
 
 #: post-worktime-logger.php:117
 #@ post-worktime-logger
 msgid "Current worktime"
-msgstr "Tempo atual"
+msgstr "Τρέχων χρόνος εργασίας"
+
+#: post-worktime-logger.php:118
+#@ post-worktime-logger
+msgid "Total worktime"
+msgstr "Συνολικός χρόνος εργασίας"
 
 #: post-worktime-logger.php:124
 #@ post-worktime-logger
 msgid "Pause"
-msgstr "Pausar"
+msgstr "Παύση"
 
 #: post-worktime-logger.php:125
 #@ post-worktime-logger
 msgid "Resume"
-msgstr "Continuar"
+msgstr "Συνέχεια"
 
 #: post-worktime-logger.php:126
 #@ post-worktime-logger
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Επαναφορά"
 
 #: post-worktime-logger.php:153
 #@ post-worktime-logger
 msgid "Worktime"
-msgstr "Tempo de postagem"
+msgstr "Χρόνος εργασίας"
 
 #: widget.php:22
 #@ post-worktime-logger
 msgid "A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users."
-msgstr "Uma widget de frontend para exibir o tempo trabalhado pelo administrador para usuários logados ou o tempo de postagem do post atual para usuários não logados."
+msgstr "Μια μικροεφαρμογή που εμφανίζει την μικροεφαρμογή χρόνου εργασίας του διαχειριστή στους συνδεδεμένους χρήστες ή τον χρόνο εργασίας για την τρέχουσα δημοσίευση στους μη συνδεδεμένους χρήστες."
 
 #: widget.php:92
 #@ post-worktime-logger
 msgid "Title:"
-msgstr "Título:"
+msgstr "Τίτλος:"
 
 #: widget.php:96
 #@ post-worktime-logger
 msgid "Display widget for not logged in users"
-msgstr "Widget para usuários não logados"
+msgstr "Εμφάνιση μικροεφαρμογής για μη συνδεδεμένους χρήστες"
 
 #: widget.php:105
 #@ post-worktime-logger
 msgid "Pre text:"
-msgstr "Texto prévio: "
+msgstr "Πριν το κείμενο:"
 
 #: widget.php:107
 #: widget.php:112
 #@ post-worktime-logger
 msgid "This will only appear if 'Display widget for not logged in users' is enabled."
-msgstr "Isto somente aparecerá se 'Mini aplicativo para usuários não logados' estiver habilitado."
+msgstr "Αυτό εμφανίζεται μόνο όταν η επιλογή 'Εμφάνιση μικροεφαρμογής για μη συνδεδεμένους χρήστες' είναι ενεργοποιημένη."
 
 #: widget.php:110
 #@ post-worktime-logger
 msgid "After text:"
-msgstr "Texto posterior: "
+msgstr "Μετά το κείμενο:"
 
 #: settings.php:43
 #, php-format
 #@ post-worktime-logger
 msgid "Resetted worktime for %s posts."
-msgstr "Tempo de postagem reiniciado para %s posts."
+msgstr "Επαναφέρατε τον χρόνο εργασίας για %s δημοσιεύσεις."
 
 #: settings.php:80
 #@ post-worktime-logger
 msgid "Worktime Logger"
-msgstr "Registro de Tempo de Postagem"
+msgstr "Καταγραφή χρόνου εργασίας"
 
 #: settings.php:88
 #: settings.php:89
 #@ post-worktime-logger
 msgid "Settings"
-msgstr "Configurações"
+msgstr "Ρυθμίσεις"
 
 #: settings.php:102
 #@ default
 msgid "You do not have sufficient permissions to access this page."
-msgstr "Você não possui permissões suficientes para acessar essa página."
+msgstr "Δεν έχετε αρκετά δικαιώματα για να επισκεφτείτε αυτή τη σελίδα."
 
 #: settings.php:79
 #: settings.php:133
 #: settings.php:252
 #@ post-worktime-logger
 msgid "Statistics"
-msgstr "Estatísticas"
+msgstr "Στατιστικά"
 
 #: settings.php:134
 #: settings.php:140
 #, php-format
 #@ post-worktime-logger
 msgid "Top %s posts (worktime)"
-msgstr "Top %s posts (Tempo de Postagem)"
+msgstr "Κορυφαίες %s δημοσιεύσεις (χρόνος εργασίας)"
 
 #: settings.php:155
 #@ post-worktime-logger
 msgid "Minutes"
-msgstr "Minutos"
+msgstr "Λεπτά"
 
 #: settings.php:181
 #@ post-worktime-logger
 msgid "No data."
-msgstr "Sem dados."
+msgstr "Δεν υπάρχουν δεδομένα."
 
 #: settings.php:192
 #@ post-worktime-logger
 msgid "Post Worktime Logger Settings"
-msgstr "Configurações do Registro de Tempo de Postagem"
+msgstr "Ρυθμίσεις για καταγραφή χρόνου μετά την εργασία"
 
 #: settings.php:198
 #@ default
 msgid "Save Changes"
-msgstr "Salvar Alterações"
+msgstr "Αποθήκευση αλλαγών"
 
 #: settings.php:189
 #: settings.php:202
 #@ post-worktime-logger
 msgid "Reset whole worktime"
-msgstr "Reiniciar todo o tempo de postagem"
+msgstr "Επαναφορά συνολικού χρόνου"
 
 #: settings.php:221
 #@ post-worktime-logger
 msgid "General"
-msgstr "Geral"
+msgstr "Γενικά"
 
 #: settings.php:228
 #@ post-worktime-logger
 msgid "Enable control buttons"
-msgstr "Habilitar botões de controle"
+msgstr "Ενεργοποίησε τα κουμπιά ελέγχου"
 
 #: settings.php:244
 #@ post-worktime-logger
 msgid "Inactivity Timeout"
-msgstr "Intervalo de Inatividade"
+msgstr "Αντίστροφη μέτρηση αδράνειας"
 
 #: settings.php:321
 #@ post-worktime-logger
 msgid "This will allow you to pause, resume and reset the worktime."
-msgstr "Isto permitirá que pause, continue e reinicie o tempo de postagem."
+msgstr "Σας επιτρέπει να κάνετε παύση, να συνεχίσετε και να επαναφέρετε τον χρόνο εργασίας."
 
 #: settings.php:358
 #@ post-worktime-logger
 msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
-msgstr "Essa opção permite que seja especificado um certo número de minutos que podem passar sem atividade antes do contador pausar."
+msgstr "Αυτή η επιλογή σας επιτρέπει να ορίσετε έναν συγκεκριμένο αριθμό λεπτών που μπορούν να περάσουν χωρίς δραστηριότητα, μέχρι να σταματήσει ο χρόνος."
 
 #: settings.php:136
 #, php-format
