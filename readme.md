@@ -28,22 +28,65 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 ## Screenshots
 
+### Edit Post
+
+Post Worktime Logger will add a new interactive box to your edit screen, allowing you to keep track of how much time you spend on your alterations:
+
 ![meta_box](screenshots/screenshot-1.png)
+
+You may stop the current counting whenever you need to do something else, or reset it altogether, for example, if you want to restart your work from scratch.
+
+### Post List
+
+The plugin changes your post list, granting you an additional column that shows the time spent on any particular post:
+
 ![list](screenshots/screenshot-2.png)
+
+### Statistics
+
+The plugin also offers an indicator that allows you to know which articles you spent more time working on. To check it, just go to your dashboard, it will be the first option under the plugin entry in the sidebar:
+
 ![statistics](screenshots/screenshot-6.png)
-![control_panel](screenshots/screenshot-4.png)
+
+### Plugin Widget
+
+Post Worktime Logger will let you add a configurable widget to your site, similar to the meta box on the Edit Post screen:
+
+![site](screenshots/screenshot-4.png)
+
+You are able to choose its display name, and whether the widget will be exposed or not to non-logged visitors.
 
 ## Suggest new features
 
 There is a missing feature? Please create an issue for that.
 
+## Contributing to Post Worktime Logger
+
+First off, thanks for your desire to contribute! This project follows the WordPress Coding Standards. You can install PHPCS and the WPCS globally, or you can install them within this project.
+
+To install them in this project, run the following
+
+1. `composer install` to install PHPCS and WPCS
+2. `vendor/bin/phpcs --config-set installed_paths ../../wp-coding-standards/` to add WPCS to the project version of PHPCS
+
+With those commands run, you should be able to run PHPCS against any file or directory to show which (if any) lines of code are violating the standard. You can also run PHPCBF against a file or directory to auto-fix applicable errors.
+
+To check a file or directory, run the following command:
+
+1. `vendor/bin/phpcs --standard=ruleset.xml /path/to/file.php` to report the errors
+2. `vendor/bin/phpcbf --standard=ruleset.xml /path/to/file.php` to auto-fix errors
+
 ## Report a bug
 
 If you have found a bug, please create an issue or feel free to fix it and make a pull request for that fix.
 
+## Donation
+You can donate to this project via
+[PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A).
+
 ## Changelog
 
-### 1.3.0 
+### 1.3.0
 * Implemented an own page for Post Worktime Logger.
 * Implemented an options page with some nice options and a reset button.
 * Implemented a statistics page to show the top 25 posts (worktime.
@@ -73,6 +116,21 @@ If you have found a bug, please create an issue or feel free to fix it and make 
 
 ###1.0.0
 * First Version
+
+## Development Setup
+
+To develop this plugin you can use the provided Dockerfile and docker-compose.yml
+This will create a Wordpress 4.6.1 instance with the plugin installed (but not yet activated) and a mysql database.
+
+```
+# start environment
+$ docker-compose up
+```
+
+afterwards open http://localhost:8080 in your browser.
+
+You will have to setup wordpress with some simple steps (like give it a name and set a user and password) and also activate
+the plugin via plugins menu.
 
 ## License
 
