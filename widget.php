@@ -35,6 +35,7 @@ class PwlFrontendWidget extends WP_Widget
             {
                 $title = apply_filters('widget_title', $_instance['title']);
                 $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'] ? 'true' : 'false';
+                $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'] ? 'true' : 'false';
                 $preText = $_instance['preText'];
                 $afterText = $_instance['afterText'];
                 $content = "";
@@ -51,7 +52,7 @@ class PwlFrontendWidget extends WP_Widget
                     $content.=  $_args['before_title'] . $title. $_args['after_title'];
                 }
 
-                if (is_user_logged_in())
+                if (is_user_logged_in() && $disableFrontendTimeTracking!=false)
                 {//display the controllbox in frontend
                     $content.= pwlGetPostWorktimeLoggerControlBox($worktime, $currentPostId);
                 }
@@ -82,6 +83,7 @@ class PwlFrontendWidget extends WP_Widget
 
         $title = $_instance['title'];
         $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'];
+        $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'];
         $preText = $_instance['preText'];
         $afterText = $_instance['afterText'];
         ?>
@@ -92,6 +94,11 @@ class PwlFrontendWidget extends WP_Widget
         <p>
             <label for="<?php echo $this->get_field_id('displayWorktimeForNotLoggedInUsers'); ?>"><?php echo __("Display widget for not logged in users", self::PWL_TEXT_DOMAIN); ?></label>
             <input class="checkbox" id="<?php echo $this->get_field_id('displayWorktimeForNotLoggedInUsers'); ?>" name="<?php echo $this->get_field_name('displayWorktimeForNotLoggedInUsers'); ?>" type="checkbox" <?php checked($displayWorktimeForNotLoggedInUsers, 'on' ); ?>/>
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id('disableFrontendTimeTracking'); ?>"><?php echo __("Disable frontend time tracking", self::PWL_TEXT_DOMAIN); ?></label>
+            <input class="checkbox" id="<?php echo $this->get_field_id('disableFrontendTimeTracking'); ?>" name="<?php echo $this->get_field_name('disableFrontendTimeTracking'); ?>" type="checkbox" <?php checked($disableFrontendTimeTracking, 'on' ); ?>/>
+            <p><?php echo __("This will only affect logged in users.", self::PWL_TEXT_DOMAIN) ?></p>
         </p>
         <p>
             <label for="<?php echo $this->get_field_id('preText'); ?>"><?php echo __("Pre text:", self::PWL_TEXT_DOMAIN); ?></label>
@@ -112,6 +119,7 @@ class PwlFrontendWidget extends WP_Widget
 
         $instance['title'] = strip_tags($_newInstance['title']);
         $instance['displayWorktimeForNotLoggedInUsers'] = $_newInstance['displayWorktimeForNotLoggedInUsers'];
+        $instance['disableFrontendTimeTracking'] = $_newInstance['disableFrontendTimeTracking'];
         $instance['preText'] = $_newInstance['preText'];
         $instance['afterText'] = $_newInstance['afterText'];
 
