@@ -176,6 +176,7 @@ class PostWorktimeLoggerSettingsPage
      */
     public function createAdminSettingsPage()
     {
+        $confirmMessage = __("Reset whole worktime", self::PWL_TEXT_DOMAIN).'?';
         ?>
         <div class="wrap">
             <h1><?php echo __("Post Worktime Logger Settings", self::PWL_TEXT_DOMAIN); ?></h1>
@@ -187,7 +188,7 @@ class PostWorktimeLoggerSettingsPage
                 submit_button(__("Save Changes"), "primary", "submit", false);
                 ?>
             </form>
-            <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>">
+            <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>" onsubmit="return confirm('<?php echo $confirmMessage; ?>');">
                 <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", self::PWL_TEXT_DOMAIN); ?></button>
             </form>
         </div>
