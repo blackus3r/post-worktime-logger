@@ -86,6 +86,19 @@ You can donate to this project via
 
 ## Changelog
 
+### 1.4.0
+* Implemented a checkbox in the settings to prevent the timer from autostart.
+* Improved code and translation engine.
+* Added total worktime in statistics page.
+* Implemented the option to change the amount of posts in statistic.
+* Implemented a confirm question before resetting the whole worktime.
+* Implemented widget option to disable frontend time tracking.
+* Added a link to the developers blog, where you can find more information about the plugin in german. 
+* Added brazilian portuguese translation.
+* Added greek translation.
+* Added italian translation.
+* Added donation link. 
+
 ### 1.3.0
 * Implemented an own page for Post Worktime Logger.
 * Implemented an options page with some nice options and a reset button.
