@@ -86,6 +86,9 @@ You can donate to this project via
 
 ## Changelog
 
+### 1.4.1
+* Fixed duplicated heading
+
 ### 1.4.0
 * Implemented a checkbox in the settings to prevent the timer from autostart.
 * Improved code and translation engine.
