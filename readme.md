@@ -60,6 +60,22 @@ You are able to choose its display name, and whether the widget will be exposed 
 
 There is a missing feature? Please create an issue for that.
 
+## Contributing to Post Worktime Logger
+
+First off, thanks for your desire to contribute! This project follows the WordPress Coding Standards. You can install PHPCS and the WPCS globally, or you can install them within this project.
+
+To install them in this project, run the following
+
+1. `composer install` to install PHPCS and WPCS
+2. `vendor/bin/phpcs --config-set installed_paths ../../wp-coding-standards/` to add WPCS to the project version of PHPCS
+
+With those commands run, you should be able to run PHPCS against any file or directory to show which (if any) lines of code are violating the standard. You can also run PHPCBF against a file or directory to auto-fix applicable errors.
+
+To check a file or directory, run the following command:
+
+1. `vendor/bin/phpcs --standard=ruleset.xml /path/to/file.php` to report the errors
+2. `vendor/bin/phpcbf --standard=ruleset.xml /path/to/file.php` to auto-fix errors
+
 ## Report a bug
 
 If you have found a bug, please create an issue or feel free to fix it and make a pull request for that fix.
@@ -100,6 +116,21 @@ You can donate to this project via
 
 ###1.0.0
 * First Version
+
+## Development Setup
+
+To develop this plugin you can use the provided Dockerfile and docker-compose.yml
+This will create a Wordpress 4.6.1 instance with the plugin installed (but not yet activated) and a mysql database.
+
+```
+# start environment
+$ docker-compose up
+```
+
+afterwards open http://localhost:8080 in your browser.
+
+You will have to setup wordpress with some simple steps (like give it a name and set a user and password) and also activate
+the plugin via plugins menu.
 
 ## License
 

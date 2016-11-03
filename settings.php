@@ -40,7 +40,7 @@ class PostWorktimeLoggerSettingsPage
         }
         ?>
         <div class="updated">
-            <p><?php printf(__( 'Resetted worktime for %s posts.', 'post-worktime-logger' ), $_GET['pwlResetPostsNumber']); ?></p>
+            <p><?php printf(__( 'Resetted worktime for %s posts.', self::PWL_TEXT_DOMAIN ), $_GET['pwlResetPostsNumber']); ?></p>
         </div>
         <?php
     }
@@ -76,8 +76,8 @@ class PostWorktimeLoggerSettingsPage
     public function registerSettingsPage()
     {
         add_menu_page(
-            __("Statistics", "post-worktime-logger"),
-            __("Worktime Logger", "post-worktime-logger"),
+            __("Statistics", self::PWL_TEXT_DOMAIN),
+            __("Worktime Logger", self::PWL_TEXT_DOMAIN),
             'manage_options',
             "post-worktime-logger-statistics",
             array($this, "createAdminStatisticsPage")
@@ -85,8 +85,8 @@ class PostWorktimeLoggerSettingsPage
 
         add_submenu_page(
             "post-worktime-logger-statistics",
-            __("Settings", "post-worktime-logger"),
-            __("Settings", "post-worktime-logger"),
+            __("Settings", self::PWL_TEXT_DOMAIN),
+            __("Settings", self::PWL_TEXT_DOMAIN),
             'manage_options',
             'post-worktime-logger-settings',
             array($this, "createAdminSettingsPage")
@@ -102,7 +102,7 @@ class PostWorktimeLoggerSettingsPage
             wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
         }
 
-        $numOfPosts = 25;
+        $numOfPosts = $this->options['numberOfPosts'];
 
         $args = array(
             'posts_per_page' => $numOfPosts,
@@ -130,7 +130,8 @@ class PostWorktimeLoggerSettingsPage
             $total_posts_worktime_minutes = $total_posts_worktime % 60;
 
             echo '<div class="wrap">';
-            echo "<h1>".__("Statistics", "post-worktime-logger")."</h1>";
+            echo "<h1>".__("Statistics", self::PWL_TEXT_DOMAIN)."</h1>";
+            echo '<h2>'.sprintf(__("Top %s posts (worktime)", self::PWL_TEXT_DOMAIN), $numOfPosts).'</h2>';
             if (0 == $total_posts_worktime_hours) {
                 echo '<p class="description">' . sprintf(__("Total worktime on posts: %d minutes", self::PWL_TEXT_DOMAIN), $total_posts_worktime_minutes) . '</p>';
             } else {
@@ -151,7 +152,7 @@ class PostWorktimeLoggerSettingsPage
                         data: {
                             labels: " . (json_encode($posts_titles,JSON_HEX_QUOT)) . ",
                             datasets: [{
-                                label: '".__('Minutes', "post-worktime-logger")."',
+                                label: '".__('Minutes', self::PWL_TEXT_DOMAIN)."',
                                 generateLabels: null,
                                 data: [" . implode(',', $posts_worktimes) . "],
                                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -177,7 +178,7 @@ class PostWorktimeLoggerSettingsPage
 
             return;
         }
-        else _e('No data.', "post-worktime-logger");
+        else _e('No data.', self::PWL_TEXT_DOMAIN);
     }
 
     /**
@@ -187,7 +188,7 @@ class PostWorktimeLoggerSettingsPage
     {
         ?>
         <div class="wrap">
-            <h1><?php echo __("Post Worktime Logger Settings", "post-worktime-logger"); ?></h1>
+            <h1><?php echo __("Post Worktime Logger Settings", self::PWL_TEXT_DOMAIN); ?></h1>
             <form class="pwl-reset-form" method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
@@ -197,7 +198,7 @@ class PostWorktimeLoggerSettingsPage
                 ?>
             </form>
             <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>">
-                <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", "post-worktime-logger"); ?></button>
+                <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", self::PWL_TEXT_DOMAIN); ?></button>
             </form>
         </div>
         <?php
@@ -216,14 +217,14 @@ class PostWorktimeLoggerSettingsPage
 
         add_settings_section(
             'general', // ID
-            __('General', "post-worktime-logger"),
+            __('General', self::PWL_TEXT_DOMAIN),
             null, // Callback
             'post-worktime-logger-settings' // Page
         );
 
         add_settings_field(
            'enableControlButtons',
-            __('Enable control buttons', "post-worktime-logger"),
+            __('Enable control buttons', self::PWL_TEXT_DOMAIN),
             array( $this, 'enableControlButtonsCallback'),
             'post-worktime-logger-settings',
             'general'
@@ -239,10 +240,25 @@ class PostWorktimeLoggerSettingsPage
 
         add_settings_field(
            'inactivityTimeout',
-            __('Inactivity Timeout', "post-worktime-logger"),
+            __('Inactivity Timeout', self::PWL_TEXT_DOMAIN),
             array( $this, 'inactivityTimeoutCallback'),
             'post-worktime-logger-settings',
             'general'
+        );
+        
+        add_settings_section(
+            'statistics', // ID
+            __('Statistics', "post-worktime-logger"),
+            null, // Callback
+            'post-worktime-logger-settings' // Page
+        );
+        
+        add_settings_field(
+           'numberOfPosts',
+            __('number of posts', "post-worktime-logger"),
+            array( $this, 'numberOfPostsCallback'),
+            'post-worktime-logger-settings',
+            'statistics'
         );
     }
 
@@ -275,6 +291,15 @@ class PostWorktimeLoggerSettingsPage
                 $newInput['inactivityTimeout'] = $inactivityTimeout;
             }
         }
+        
+        if( isset( $_input['numberOfPosts'] ) )
+        {
+            $numberOfPosts = sanitize_text_field( wp_unslash( $_input['numberOfPosts'] ) );
+
+            if ( is_numeric( $numberOfPosts ) ) {
+                $newInput['numberOfPosts'] = $numberOfPosts;
+            }
+        }
 
         return $newInput;
     }
@@ -292,7 +317,7 @@ class PostWorktimeLoggerSettingsPage
 
         ?>
         <input type="checkbox" id="enableControlButtons" name="post-worktime-logger-options[enableControlButtons]"  <?php checked($enableControlButtons, 'on' ); ?> />
-        <p class="description"><?php esc_html_e( "This will allow you to pause, resume and reset the worktime.", "post-worktime-logger" ); ?></p>
+        <p class="description"><?php esc_html_e( "This will allow you to pause, resume and reset the worktime.", self::PWL_TEXT_DOMAIN ); ?></p>
         <?php
     }
 
@@ -329,7 +354,25 @@ class PostWorktimeLoggerSettingsPage
 
         ?>
         <input type="text" size="3" id="inactivityTimeout" name="post-worktime-logger-options[inactivityTimeout]"  value="<?php echo esc_html( $inactivityTimeout ); ?>" />
-        <p class="description"><?php esc_html_e( "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.", "post-worktime-logger"); ?></p>
+        <p class="description"><?php esc_html_e( "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses.", self::PWL_TEXT_DOMAIN); ?></p>
+        <?php
+    }
+    
+    /**
+     * Display this amount of posts on the Statistics page
+     */
+    public function numberOfPostsCallback()
+    {
+        $numberOfPosts = 25;
+
+        if (! empty($this->options['numberOfPosts']))
+        {
+            $numberOfPosts = $this->options['numberOfPosts'];
+        }
+
+        ?>
+        <input type="number"  id="numberOfPosts" name="post-worktime-logger-options[numberOfPosts]" min="1" max="250" value="<?php echo esc_html( $numberOfPosts ); ?>">
+         <p class="description"><?php esc_html_e( "Specify this amount of posts to be displayed on the statistics page top worktime chart", "post-worktime-logger"); ?></p>
         <?php
     }
 }

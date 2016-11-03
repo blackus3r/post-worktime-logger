@@ -22,6 +22,9 @@ if ( !defined('PLUGINDIR') )
 include_once (__DIR__."/widget.php");
 include_once (__DIR__."/settings.php");
 
+const PWL_NAME = "post-worktime-logger";
+const PWL_TEXT_DOMAIN = "post-worktime-logger";
+
 $pwlOptions = get_option("post-worktime-logger-options");
 
 /**
@@ -94,7 +97,7 @@ function pwlRenderMetaBoxSummary()
             }
         }
     }
-    else $content = __("You have to save the post, before we can track the time.", "post-worktime-logger");
+    else $content = __("You have to save the post, before we can track the time.", PWL_TEXT_DOMAIN);
 
 
     echo $content;
@@ -111,16 +114,16 @@ function pwlGetPostWorktimeLoggerControlBox($_totalWorktime, $_postId)
 {
     $content = "";
     $content.= "<span style=\"display:none;\" id=\"post-worktime-logger-current-post-id\">".$_postId."</span>";
-    $content .= __('Current worktime', "post-worktime-logger").': <span id="frontendTime">0</span><br />';
-    $content .= __("Total worktime", "post-worktime-logger").': <span id="serverWorktime">';
+    $content .= __('Current worktime', PWL_NAME).': <span id="frontendTime">0</span><br />';
+    $content .= __("Total worktime", PWL_NAME).': <span id="serverWorktime">';
     $content .= pwlSecondsToHumanReadableTime($_totalWorktime);
     $content .= '</span><br />';
 
     if (isControlBoxEnabled())
     {
-        $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", "post-worktime-logger").'</button>';
-        $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", "post-worktime-logger").'</button>';
-        $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", "post-worktime-logger").'</button>';
+        $content .= '<button class="button button-small pwl-button" id="pwl-pause-button">'.__("Pause", PWL_TEXT_DOMAIN).'</button>';
+        $content .= '<button class="button button-small pwl-button" style="display:none;" id="pwl-resume-button">'.__("Resume", PWL_TEXT_DOMAIN).'</button>';
+        $content .= '<button class="button button-small pwl-button" id="pwl-reset-button">'.__("Reset", PWL_TEXT_DOMAIN).'</button>';
     }
 
     return $content;
@@ -133,7 +136,7 @@ function pwlAddMetaBoxSummary()
 {
     add_meta_box(
         'post-worktime-logger-meta-box',
-        __( 'Post Worktime', "post-worktime-logger"),
+        __( 'Post Worktime', PWL_TEXT_DOMAIN),
         'pwlRenderMetaBoxSummary'
     );
 }
@@ -147,7 +150,7 @@ function pwlAddMetaBoxSummary()
 function pwPostsPageHeader($_columns)
 {
     return array_merge( $_columns,
-        array('pwlworktimecolumn' => __('Worktime', "post-worktime-logger")) );
+        array('pwlworktimecolumn' => __('Worktime', PWL_TEXT_DOMAIN)) );
 }
 
 /**
@@ -247,7 +250,7 @@ add_action( 'wp_ajax_worktime_reset', 'pwlHandleWorktimeReset');
 
 
 add_action( 'init', function () {
-    $domain = 'post-worktime-logger';
+    $domain = PWL_TEXT_DOMAIN;
     $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
     if ( $loaded = load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' ) )
     {
@@ -262,18 +265,18 @@ add_action( 'init', function () {
 //Register admin javascript file
 add_action("admin_enqueue_scripts", function ($hook) {
     if ($hook=="toplevel_page_post-worktime-logger-statistics"){
-		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/Chart.bundle.min.js", __FILE__ ));
+		wp_enqueue_script(PWL_NAME, plugins_url( "resources/js/Chart.bundle.min.js", __FILE__ ));
 	}
 
     global $pwlOptions;
 
-    wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
+    wp_enqueue_style(PWL_NAME, plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
 
 	if ($hook=="post.php")
 	{
-		wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
+		wp_enqueue_script(PWL_NAME, plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
 
-        wp_localize_script( 'post-worktime-logger', 'pwl', array(
+        wp_localize_script( PWL_NAME, 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
             'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
@@ -283,12 +286,12 @@ add_action("admin_enqueue_scripts", function ($hook) {
 
 //Register scripts for frontend
 add_action("wp_enqueue_scripts", function () {
-    wp_enqueue_style("post-worktime-logger", plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
+    wp_enqueue_style(PWL_NAME, plugins_url( "resources/css/post-worktime-logger.css", __FILE__ ));
 
     if (is_user_logged_in())
     {//only include js if the user is logged in.
-        wp_enqueue_script("post-worktime-logger", plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ), array("jquery"));
-        wp_localize_script( 'post-worktime-logger', 'pwl',
+        wp_enqueue_script(PWL_NAME, plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ), array("jquery"));
+        wp_localize_script( PWL_NAME, 'pwl',
             array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
         );
     }
