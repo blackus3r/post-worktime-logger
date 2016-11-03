@@ -291,9 +291,11 @@ add_action("wp_enqueue_scripts", function () {
     if (is_user_logged_in())
     {//only include js if the user is logged in.
         wp_enqueue_script(PWL_NAME, plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ), array("jquery"));
-        wp_localize_script( PWL_NAME, 'pwl',
-            array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
-        );
+        wp_localize_script( PWL_NAME, 'pwl', array(
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
+            'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
+        ) );
     }
 });
 

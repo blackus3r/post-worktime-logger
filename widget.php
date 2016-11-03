@@ -34,8 +34,8 @@ class PwlFrontendWidget extends WP_Widget
             if ($currentPostId)
             {
                 $title = apply_filters('widget_title', $_instance['title']);
-                $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'] ? 'true' : 'false';
-                $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'] ? 'true' : 'false';
+                $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'] ? true : false;
+                $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'] ? true : false;
                 $preText = $_instance['preText'];
                 $afterText = $_instance['afterText'];
                 $content = "";
@@ -52,7 +52,7 @@ class PwlFrontendWidget extends WP_Widget
                     $content.=  $_args['before_title'] . $title. $_args['after_title'];
                 }
 
-                if (is_user_logged_in() && $disableFrontendTimeTracking!=false)
+                if (is_user_logged_in() && $disableFrontendTimeTracking!=true)
                 {//display the controllbox in frontend
                     $content.= pwlGetPostWorktimeLoggerControlBox($worktime, $currentPostId);
                 }
