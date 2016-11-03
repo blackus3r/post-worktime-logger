@@ -137,7 +137,6 @@ class PostWorktimeLoggerSettingsPage
             } else {
                 echo '<p class="description">' . sprintf(__("Total worktime on posts: %d hours, %d minutes", self::PWL_TEXT_DOMAIN), $total_posts_worktime_hours, $total_posts_worktime_minutes) . '</p>';
             }
-            echo '<h2>'.sprintf(__("Top %s posts (worktime)", "post-worktime-logger"), $numOfPosts).'</h2>';
             echo '<div id="chartsContainer" style="width:90%;">';
             echo '<canvas id="pwlTopWorktimePosts" width="400" height="200"></canvas>';
             echo '</div>';
