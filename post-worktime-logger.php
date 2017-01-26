@@ -250,7 +250,7 @@ function isAutoStartDisabled()
 	{
 	    return true;
 	}
-	else if (!empty( $pwlOptions['disableAutoStartPublishedPosts'] && get_post_status() == "publish")
+	else if (!empty( $pwlOptions['disableAutoStartPublishedPosts']) && get_post_status() == "publish")
 	{
 	    return true;   
 	}
