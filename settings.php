@@ -366,7 +366,7 @@ class PostWorktimeLoggerSettingsPage
         else $disableAutoStart = true;
 
         ?>
-        <input type="checkbox" id="disableAutoStartPublishedPosts" name="post-worktime-logger-options[disableAutoStartPublishedPosts]"  <?php checked(disableAutoStartPublishedPosts, 'on' ); ?> />
+        <input type="checkbox" id="disableAutoStartPublishedPosts" name="post-worktime-logger-options[disableAutoStartPublishedPosts]"  <?php checked($disableAutoStartPublishedPosts, 'on' ); ?> />
         <p class="description">
             <?php esc_html_e( "Activate this to prevent the time from starting automatically on post editing for publsihed posts.", "post-worktime-logger" ); ?>
         </p>
