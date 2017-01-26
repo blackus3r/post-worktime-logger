@@ -9,7 +9,7 @@
 Plugin Name: Post Worktime Logger
 Plugin URI: https://wordpress.org/plugins/post-worktime-logger/
 Description: A plugin to track the worktime for each post.
-Version: 1.4.1
+Version: 1.5.0
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
 License: GPLv3
@@ -241,6 +241,23 @@ function isControlBoxEnabled()
     else return false;
 }
 
+/**
+ * Checks if we should disable the auto start timer, depending on the options and the state of our post. 
+ */
+function isAutoStartDisabled()
+{
+	global $pwlOptions;
+	if (!empty( $pwlOptions['disableAutoStart']))
+	{
+	    return true;
+	}
+	else if (!empty( $pwlOptions['disableAutoStartPublishedPosts']) && get_post_status() == "publish")
+	{
+	    return true;   
+	}
+	else return false;
+}
+
 //Register post meta box
 add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
@@ -276,11 +293,11 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	{
 		wp_enqueue_script(PWL_NAME, plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
 
-        wp_localize_script( PWL_NAME, 'pwl', array(
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
-            'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
-        ) );
+		wp_localize_script( PWL_NAME, 'pwl', array(
+		    'ajax_url' => admin_url( 'admin-ajax.php' ),
+		    'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
+		    'disableAutoStart' => ( isAutoStartDisabled() ) ? 'on' : '0',
+		) );
 	}
 });
 
@@ -294,7 +311,7 @@ add_action("wp_enqueue_scripts", function () {
         wp_localize_script( PWL_NAME, 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
-            'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
+            'disableAutoStart' => ( isAutoStartDisabled() ) ? 'on' : '0',
         ) );
     }
 });

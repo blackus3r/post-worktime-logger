@@ -102,7 +102,8 @@ class PostWorktimeLoggerSettingsPage
             wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
         }
 
-        $numOfPosts = $this->options['numberOfPosts'];
+        $numOfPosts = 25;
+        if ( !empty($this->options['numberOfPosts'])) $numOfPosts = $this->options['numberOfPosts'];
 
         $args = array(
             'posts_per_page' => $numOfPosts,
@@ -229,6 +230,14 @@ class PostWorktimeLoggerSettingsPage
             'post-worktime-logger-settings',
             'general'
         );
+	    
+	add_settings_field(
+           'disableAutoStartPublishedPosts',
+            __('Disable auto start for published posts', self::PWL_TEXT_DOMAIN),
+            array( $this, 'disableAutoStartPublishesPostsCallback'),
+            'post-worktime-logger-settings',
+            'general'
+        );
 
         add_settings_field(
            'disableAutoStart',
@@ -282,6 +291,12 @@ class PostWorktimeLoggerSettingsPage
             $disableAutoStart = sanitize_text_field( wp_unslash( $_input['disableAutoStart'] ) );
             $newInput['disableAutoStart'] = $disableAutoStart;
         }
+	    
+	if( isset( $_input['disableAutoStartPublishedPosts'] ) )
+        {
+            $disableAutoStartPublishedPosts = sanitize_text_field( wp_unslash( $_input['disableAutoStartPublishedPosts'] ) );
+            $newInput['disableAutoStartPublishedPosts'] = $disableAutoStartPublishedPosts;
+        }
 
         if( isset( $_input['inactivityTimeout'] ) )
         {
@@ -305,8 +320,8 @@ class PostWorktimeLoggerSettingsPage
     }
 
     /**
- * Get the settings option array and print one of its values
- */
+    * Get the settings option array and print one of its values
+    */
     public function enableControlButtonsCallback()
     {
         if (isset($this->options['enableControlButtons']))
@@ -339,7 +354,26 @@ class PostWorktimeLoggerSettingsPage
         </p>
         <?php
     }
+	
+    /**
+     * Get the settings option array and print one of its values
+     */
+    public function disableAutoStartPublishesPostsCallback()
+    {
+        if (isset($this->options['disableAutoStartPublishedPosts']))
+        {
+            $disableAutoStartPublishedPosts = $this->options['disableAutoStartPublishedPosts'];
+        }
+        else $disableAutoStartPublishedPosts = null;
 
+        ?>
+        <input type="checkbox" id="disableAutoStartPublishedPosts" name="post-worktime-logger-options[disableAutoStartPublishedPosts]"  <?php checked($disableAutoStartPublishedPosts, 'on' ); ?> />
+        <p class="description">
+            <?php esc_html_e( "Activate this to prevent the time from starting automatically on post editing for publsihed posts.", "post-worktime-logger" ); ?>
+        </p>
+        <?php
+    }
+	
     /**
      * Display the HTML for the minutes of inactivity option.
      */
