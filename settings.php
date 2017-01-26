@@ -233,7 +233,7 @@ class PostWorktimeLoggerSettingsPage
 	add_settings_field(
            'disableAutoStartPublishedPosts',
             __('Disable auto start for published posts', self::PWL_TEXT_DOMAIN),
-            array( $this, 'disableAutoStartPublishedPosts'),
+            array( $this, 'disableAutoStartPublishesPostsCallback'),
             'post-worktime-logger-settings',
             'general'
         );
@@ -357,7 +357,7 @@ class PostWorktimeLoggerSettingsPage
     /**
      * Get the settings option array and print one of its values
      */
-    public function disableAutoStartCallback()
+    public function disableAutoStartPublishesPostsCallback()
     {
         if (isset($this->options['disableAutoStartPublishedPosts']))
         {
