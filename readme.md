@@ -86,6 +86,10 @@ You can donate to this project via
 
 ## Changelog
 
+### 1.5.0 
+* Implemented option to prevent the timer from auto start for published posts.
+* Disable the widget on a static front page.
+
 ### 1.4.1
 * Fixed duplicated heading
 

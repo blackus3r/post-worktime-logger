@@ -1,10 +1,10 @@
 === Post Worktime Logger===
 Contributors: filme-blog
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
-Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time
+Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time, Stunden, Uhr, Timer
 Requires at least: 2.3.1
 Tested up to: 4.6
-Stable tag: 1.4.1
+Stable tag: 1.5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -45,6 +45,13 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 You can donate to this project via PayPal by visiting this page: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 
 == Changelog ==
+
+= 1.5.0 =
+* Implemented option to prevent the timer from auto start for published posts.
+* Disable the widget on a static front page.
+
+= 1.4.1 =
+* Fixed duplicated heading
 
 = 1.4.0 =
 * Implemented a checkbox in the settings to prevent the timer from autostart.
