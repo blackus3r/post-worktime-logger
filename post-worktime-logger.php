@@ -246,7 +246,7 @@ function isControlBoxEnabled()
  */
 function isAutoStartDisabled()
 {
-	if (!empty( $pwlOptions['disableAutoStart'])
+	if (!empty( $pwlOptions['disableAutoStart']))
 	{
 	    return true;
 	}
