@@ -241,6 +241,22 @@ function isControlBoxEnabled()
     else return false;
 }
 
+/**
+ * Checks if we should disable the auto start timer, depending on the options and the state of our post. 
+ */
+function isAutoStartDisabled()
+{
+	if (!empty( $pwlOptions['disableAutoStart'])
+	{
+	    return true;
+	}
+	else if (!empty( $pwlOptions['disableAutoStartPublishedPosts'] && get_post_status() == "publish")
+	{
+	    return true;   
+	}
+	else return false;
+}
+
 //Register post meta box
 add_action( 'add_meta_boxes', 'pwlAddMetaBoxSummary');
 
@@ -279,7 +295,7 @@ add_action("admin_enqueue_scripts", function ($hook) {
         wp_localize_script( PWL_NAME, 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
-            'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
+            'disableAutoStart' => isAutoStartDisabled(),
         ) );
 	}
 });
@@ -294,7 +310,7 @@ add_action("wp_enqueue_scripts", function () {
         wp_localize_script( PWL_NAME, 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
-            'disableAutoStart' => ( ! empty( $pwlOptions['disableAutoStart'] ) ) ? esc_html( $pwlOptions['disableAutoStart'] ) : '0',
+            'disableAutoStart' => isAutoStartDisabled(),
         ) );
     }
 });
