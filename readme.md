@@ -105,7 +105,7 @@ You can donate to this project via
 ### 1.3.0
 * Implemented an own page for Post Worktime Logger.
 * Implemented an options page with some nice options and a reset button.
-* Implemented a statistics page to show the top 25 posts (worktime.
+* Implemented a statistics page to show the top 25 posts (worktime).
 * Improved documentation of the plugin.
 
 ###1.2.2
