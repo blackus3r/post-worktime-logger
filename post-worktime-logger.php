@@ -246,6 +246,7 @@ function isControlBoxEnabled()
  */
 function isAutoStartDisabled()
 {
+	global $pwlOptions;
 	if (!empty( $pwlOptions['disableAutoStart']))
 	{
 	    return true;
@@ -292,11 +293,11 @@ add_action("admin_enqueue_scripts", function ($hook) {
 	{
 		wp_enqueue_script(PWL_NAME, plugins_url( "resources/js/post-worktime-logger.js", __FILE__ ));
 
-        wp_localize_script( PWL_NAME, 'pwl', array(
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
-            'disableAutoStart' => isAutoStartDisabled(),
-        ) );
+		wp_localize_script( PWL_NAME, 'pwl', array(
+		    'ajax_url' => admin_url( 'admin-ajax.php' ),
+		    'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
+		    'disableAutoStart' => ( isAutoStartDisabled() ) ? 'on' : '0',
+		) );
 	}
 });
 
@@ -310,7 +311,7 @@ add_action("wp_enqueue_scripts", function () {
         wp_localize_script( PWL_NAME, 'pwl', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'inactivityTimeout' => ( ! empty( $pwlOptions['inactivityTimeout'] ) ) ? esc_html( $pwlOptions['inactivityTimeout'] ) : '5',
-            'disableAutoStart' => isAutoStartDisabled(),
+            'disableAutoStart' => ( isAutoStartDisabled() ) ? 'on' : '0',
         ) );
     }
 });
