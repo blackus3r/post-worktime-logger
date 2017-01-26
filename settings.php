@@ -102,7 +102,8 @@ class PostWorktimeLoggerSettingsPage
             wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
         }
 
-        $numOfPosts = $this->options['numberOfPosts'];
+        $numOfPosts = 25;
+        if ( !empty($this->options['numberOfPosts'])) $numOfPosts = $this->options['numberOfPosts'];
 
         $args = array(
             'posts_per_page' => $numOfPosts,
