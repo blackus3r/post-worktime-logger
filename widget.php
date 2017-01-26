@@ -26,46 +26,49 @@ class PwlFrontendWidget extends WP_Widget
 
     public function widget( $_args, $_instance )
     {
-        $queriedObject = get_queried_object();
-        if ($queriedObject)
+        if (!is_front_page())
         {
-            $currentPostId = $queriedObject->ID;
-
-            if ($currentPostId)
+            $queriedObject = get_queried_object();
+            if ($queriedObject)
             {
-                $title = apply_filters('widget_title', $_instance['title']);
-                $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'] ? true : false;
-                $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'] ? true : false;
-                $preText = $_instance['preText'];
-                $afterText = $_instance['afterText'];
-                $content = "";
-                $worktime = get_post_meta($currentPostId, "post-worktime", true);
-                if (!$worktime)
+                $currentPostId = $queriedObject->ID;
+
+                if ($currentPostId)
                 {
-                    update_post_meta( $currentPostId, "post-worktime", 0 );
-                    $worktime = $worktime = get_post_meta($currentPostId, "post-worktime", true);
-                }
+                    $title = apply_filters('widget_title', $_instance['title']);
+                    $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'] ? true : false;
+                    $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'] ? true : false;
+                    $preText = $_instance['preText'];
+                    $afterText = $_instance['afterText'];
+                    $content = "";
+                    $worktime = get_post_meta($currentPostId, "post-worktime", true);
+                    if (!$worktime)
+                    {
+                        update_post_meta( $currentPostId, "post-worktime", 0 );
+                        $worktime = $worktime = get_post_meta($currentPostId, "post-worktime", true);
+                    }
 
-                $content.= $_args['before_widget'];
-                if (!empty($title))
-                {
-                    $content.=  $_args['before_title'] . $title. $_args['after_title'];
-                }
+                    $content.= $_args['before_widget'];
+                    if (!empty($title))
+                    {
+                        $content.=  $_args['before_title'] . $title. $_args['after_title'];
+                    }
 
-                if (is_user_logged_in() && $disableFrontendTimeTracking!=true)
-                {//display the controllbox in frontend
-                    $content.= pwlGetPostWorktimeLoggerControlBox($worktime, $currentPostId);
-                }
-                else
-                {
-                    $content .= $preText.pwlSecondsToHumanReadableTime($worktime).$afterText;
-                }
+                    if (is_user_logged_in() && $disableFrontendTimeTracking!=true)
+                    {//display the controllbox in frontend
+                        $content.= pwlGetPostWorktimeLoggerControlBox($worktime, $currentPostId);
+                    }
+                    else
+                    {
+                        $content .= $preText.pwlSecondsToHumanReadableTime($worktime).$afterText;
+                    }
 
-                $content.=  $_args['after_widget'];
+                    $content.=  $_args['after_widget'];
 
-                if (is_user_logged_in() || (!is_user_logged_in() && $displayWorktimeForNotLoggedInUsers))
-                {//We have a logged in user, or a non logged in user, but 'displayWorktimeForNotLoggedInUsers' is enabled.
-                    echo $content;
+                    if (is_user_logged_in() || (!is_user_logged_in() && $displayWorktimeForNotLoggedInUsers))
+                    {//We have a logged in user, or a non logged in user, but 'displayWorktimeForNotLoggedInUsers' is enabled.
+                        echo $content;
+                    }
                 }
             }
         }
