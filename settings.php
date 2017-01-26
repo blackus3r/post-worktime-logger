@@ -293,8 +293,8 @@ class PostWorktimeLoggerSettingsPage
 	    
 	if( isset( $_input['disableAutoStartPublishedPosts'] ) )
         {
-            $disableAutoStart = sanitize_text_field( wp_unslash( $_input['disableAutoStartPublishedPosts'] ) );
-            $newInput['disableAutoStartPublishedPosts'] = $disableAutoStart;
+            $disableAutoStartPublishedPosts = sanitize_text_field( wp_unslash( $_input['disableAutoStartPublishedPosts'] ) );
+            $newInput['disableAutoStartPublishedPosts'] = $disableAutoStartPublishedPosts;
         }
 
         if( isset( $_input['inactivityTimeout'] ) )
