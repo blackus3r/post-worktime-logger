@@ -361,9 +361,9 @@ class PostWorktimeLoggerSettingsPage
     {
         if (isset($this->options['disableAutoStartPublishedPosts']))
         {
-            $disableAutoStart = $this->options['disableAutoStartPublishedPosts'];
+            $disableAutoStartPublishedPosts = $this->options['disableAutoStartPublishedPosts'];
         }
-        else $disableAutoStart = true;
+        else $disableAutoStartPublishedPosts = null;
 
         ?>
         <input type="checkbox" id="disableAutoStartPublishedPosts" name="post-worktime-logger-options[disableAutoStartPublishedPosts]"  <?php checked($disableAutoStartPublishedPosts, 'on' ); ?> />
