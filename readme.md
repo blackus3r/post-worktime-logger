@@ -86,6 +86,11 @@ You can donate to this project via
 
 ## Changelog
 
+### 1.5.1 
+* Fixed check to disable the widget on the static front page.
+* Fixed typo.
+* Updated german translation.
+
 ### 1.5.0 
 * Implemented option to prevent the timer from auto start for published posts.
 * Disable the widget on a static front page.
