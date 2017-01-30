@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.4.0\n"
+"Project-Id-Version: Post Worktime Logger v1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-03 10:54:27+0000\n"
+"PO-Revision-Date: 2017-01-30 19:22:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -65,28 +65,28 @@ msgstr "Tempo di lavoro"
 msgid "A widget in the frontend to display the admin worktime widget for logged in users or the worktime for the current post for not logged in users."
 msgstr "Un widget nel frontend per visualizzare il tempo di lavoro (admin) per gli utenti loggati, o il tempo di lavoro per l’articolo corrente per gli utenti non loggati."
 
-#: widget.php:92
+#: widget.php:94
 #@ post-worktime-logger
 msgid "Title:"
 msgstr "Titolo:"
 
-#: widget.php:96
+#: widget.php:98
 #@ post-worktime-logger
 msgid "Display widget for not logged in users"
 msgstr "Mostra widget per utenti non loggati"
 
-#: widget.php:105
+#: widget.php:107
 #@ post-worktime-logger
 msgid "Pre text:"
 msgstr "Testo prima:"
 
-#: widget.php:107
-#: widget.php:112
+#: widget.php:109
+#: widget.php:114
 #@ post-worktime-logger
 msgid "This will only appear if 'Display widget for not logged in users' is enabled."
 msgstr "Questo apparirà solo se 'Mostra widget per utenti non loggati' è abilitato."
 
-#: widget.php:110
+#: widget.php:112
 #@ post-worktime-logger
 msgid "After text:"
 msgstr "Testo dopo:"
@@ -114,14 +114,13 @@ msgid "You do not have sufficient permissions to access this page."
 msgstr "Non si dispone dei permessi sufficienti per accedere a questa pagina."
 
 #: settings.php:79
-#: settings.php:133
-#: settings.php:252
+#: settings.php:134
+#: settings.php:260
 #@ post-worktime-logger
 msgid "Statistics"
 msgstr "Statistiche"
 
-#: settings.php:134
-#: settings.php:140
+#: settings.php:135
 #, php-format
 #@ post-worktime-logger
 msgid "Top %s posts (worktime)"
@@ -163,60 +162,70 @@ msgstr "Generale"
 msgid "Enable control buttons"
 msgstr "Abilita i bottoni di controllo"
 
-#: settings.php:244
+#: settings.php:252
 #@ post-worktime-logger
 msgid "Inactivity Timeout"
 msgstr "Timeout per inattività"
 
-#: settings.php:321
+#: settings.php:335
 #@ post-worktime-logger
 msgid "This will allow you to pause, resume and reset the worktime."
 msgstr "Permette di mettere in pausa, riprendere ed azzerare il tempo di lavoro."
 
-#: settings.php:358
+#: settings.php:391
 #@ post-worktime-logger
 msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
 msgstr "Questa opzione permette di specificare il numero di minuti di inattività prima che il timer venga messo in pausa automaticamente."
 
-#: settings.php:136
+#: settings.php:137
 #, php-format
 #@ post-worktime-logger
 msgid "Total worktime on posts: %d minutes"
 msgstr ""
 
-#: settings.php:138
+#: settings.php:139
 #, php-format
 #@ post-worktime-logger
 msgid "Total worktime on posts: %d hours, %d minutes"
 msgstr ""
 
-#: settings.php:236
+#: settings.php:244
 #@ post-worktime-logger
 msgid "Disable Auto Start"
 msgstr ""
 
-#: settings.php:259
+#: settings.php:267
 #@ post-worktime-logger
 msgid "number of posts"
 msgstr ""
 
-#: settings.php:339
+#: settings.php:353
 #@ post-worktime-logger
 msgid "Activate this to prevent the time from starting automatically on post editing."
 msgstr ""
 
-#: settings.php:376
+#: settings.php:409
 #@ post-worktime-logger
 msgid "Specify this amount of posts to be displayed on the statistics page top worktime chart"
 msgstr ""
 
-#: widget.php:100
+#: widget.php:102
 #@ post-worktime-logger
 msgid "Disable frontend time tracking"
 msgstr ""
 
-#: widget.php:102
+#: widget.php:104
 #@ post-worktime-logger
 msgid "This will only affect logged in users."
+msgstr ""
+
+#: settings.php:236
+#@ post-worktime-logger
+msgid "Disable auto start for published posts"
+msgstr ""
+
+#: settings.php:372
+#@ post-worktime-logger
+msgid "Activate this to prevent the time from starting automatically on post editing for published posts."
 msgstr ""
 

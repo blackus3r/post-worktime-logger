@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.4.1\n"
+"Project-Id-Version: Post Worktime Logger v1.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-01-26 18:29:47+0000\n"
+"PO-Revision-Date: 2017-01-30 19:21:21+0000\n"
 "Last-Translator: admin <admin@localhost.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -226,6 +226,6 @@ msgstr "Deaktiviere Autostart für bereits veröffentlichte Artikel"
 
 #: settings.php:372
 #@ post-worktime-logger
-msgid "Activate this to prevent the time from starting automatically on post editing for publsihed posts."
+msgid "Activate this to prevent the time from starting automatically on post editing for published posts."
 msgstr "Aktiviere dies, um das automatische Starten des Timers bei der Bearbeitung von bereits veröffentlichten Artikeln zu verhindern."
 
