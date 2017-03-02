@@ -9,12 +9,13 @@
 Plugin Name: Post Worktime Logger
 Plugin URI: https://wordpress.org/plugins/post-worktime-logger/
 Description: A plugin to track the worktime for each post.
-Version: 1.5.1
+Version: 1.5.2
 Author: Patrick Hausmann
 Author URI: https://profiles.wordpress.org/filme-blog/
 License: GPLv3
 Text Domain: post-worktime-logger
 */
+const PWL_VERSION = "1.5.2";
 
 if ( !defined('PLUGINDIR') )
 	define( 'PLUGINDIR', 'wp-content/plugins' );

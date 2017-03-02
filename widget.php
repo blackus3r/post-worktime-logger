@@ -85,8 +85,8 @@ class PwlFrontendWidget extends WP_Widget
         $_instance = wp_parse_args((array)$_instance, $defaults);
 
         $title = $_instance['title'];
-        $displayWorktimeForNotLoggedInUsers = $_instance['displayWorktimeForNotLoggedInUsers'];
-        $disableFrontendTimeTracking = $_instance['disableFrontendTimeTracking'];
+        $displayWorktimeForNotLoggedInUsers = isset($_instance['displayWorktimeForNotLoggedInUsers']) ? $_instance['displayWorktimeForNotLoggedInUsers'] : false;;
+        $disableFrontendTimeTracking = isset($_instance['disableFrontendTimeTracking']) ? $_instance['disableFrontendTimeTracking'] : false;
         $preText = $_instance['preText'];
         $afterText = $_instance['afterText'];
         ?>

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Worktime Logger v1.5.0\n"
+"Project-Id-Version: Post Worktime Logger v1.5.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-01-30 19:21:21+0000\n"
+"PO-Revision-Date: 2017-03-02 21:53:15+0000\n"
 "Last-Translator: admin <admin@localhost.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,42 +20,42 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-worktime-logger.php:100
+#: post-worktime-logger.php:101
 #@ post-worktime-logger
 msgid "You have to save the post, before we can track the time."
 msgstr "Sie müssen den Artikel einmal speichern, bevor die Zeitmessung beginnt."
 
-#: post-worktime-logger.php:139
+#: post-worktime-logger.php:140
 #@ post-worktime-logger
 msgid "Post Worktime"
 msgstr "Artikel Arbeitszeit"
 
-#: post-worktime-logger.php:117
+#: post-worktime-logger.php:118
 #@ post-worktime-logger
 msgid "Current worktime"
 msgstr "Aktuelle Arbeitszeit"
 
-#: post-worktime-logger.php:118
+#: post-worktime-logger.php:119
 #@ post-worktime-logger
 msgid "Total worktime"
 msgstr "Gesamte Arbeitszeit"
 
-#: post-worktime-logger.php:124
+#: post-worktime-logger.php:125
 #@ post-worktime-logger
 msgid "Pause"
 msgstr "Pausieren"
 
-#: post-worktime-logger.php:125
+#: post-worktime-logger.php:126
 #@ post-worktime-logger
 msgid "Resume"
 msgstr "Fortfahren"
 
-#: post-worktime-logger.php:126
+#: post-worktime-logger.php:127
 #@ post-worktime-logger
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: post-worktime-logger.php:153
+#: post-worktime-logger.php:154
 #@ post-worktime-logger
 msgid "Worktime"
 msgstr "Arbeitszeit"
@@ -115,7 +115,7 @@ msgstr "Sie verfügen nicht über die notwendigen Berechtigungen um auf diese Se
 
 #: settings.php:79
 #: settings.php:134
-#: settings.php:260
+#: settings.php:282
 #@ post-worktime-logger
 msgid "Statistics"
 msgstr "Statistiken"
@@ -141,38 +141,38 @@ msgstr "Keine Daten."
 msgid "Post Worktime Logger Settings"
 msgstr "Post Worktime Logger Einstellungen"
 
-#: settings.php:198
+#: settings.php:199
 #@ default
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
 #: settings.php:189
-#: settings.php:202
+#: settings.php:203
 #@ post-worktime-logger
 msgid "Reset whole worktime"
 msgstr "Gesamte Arbeitszeit zurücksetzen"
 
-#: settings.php:221
+#: settings.php:243
 #@ post-worktime-logger
 msgid "General"
 msgstr "Allgemein"
 
-#: settings.php:228
+#: settings.php:250
 #@ post-worktime-logger
 msgid "Enable control buttons"
 msgstr "Aktiviere Steuer-Buttons"
 
-#: settings.php:252
+#: settings.php:274
 #@ post-worktime-logger
 msgid "Inactivity Timeout"
 msgstr "Zeitunterbrechung durch Inaktivität"
 
-#: settings.php:335
+#: settings.php:357
 #@ post-worktime-logger
 msgid "This will allow you to pause, resume and reset the worktime."
 msgstr "Erlaubt Ihnen das pausieren, fortfahren und zurücksetzen der Arbeitszeit."
 
-#: settings.php:391
+#: settings.php:413
 #@ post-worktime-logger
 msgid "This option allows you to specify a certain number of minutes that can pass without activity before the timer pauses."
 msgstr "Erlaubt Ihnen die maximale Zeit der Abwesenheit in Minuten anzugeben, bis der Timer pausiert."
@@ -189,22 +189,22 @@ msgstr "Gesamte Arbeitszeit für Artikel: %d Minuten"
 msgid "Total worktime on posts: %d hours, %d minutes"
 msgstr "Gesamte Arbeitszeit für Artikel: %d Stunden, %d Minuten"
 
-#: settings.php:244
+#: settings.php:266
 #@ post-worktime-logger
 msgid "Disable Auto Start"
 msgstr "Deaktiviere Autostart"
 
-#: settings.php:267
+#: settings.php:289
 #@ post-worktime-logger
 msgid "number of posts"
 msgstr "Anzahl der Artikel"
 
-#: settings.php:353
+#: settings.php:375
 #@ post-worktime-logger
 msgid "Activate this to prevent the time from starting automatically on post editing."
 msgstr "Aktiviere dies, um das automatische Starten des Timers bei der Bearbeitung von Artikeln zu verhindern. "
 
-#: settings.php:409
+#: settings.php:431
 #@ post-worktime-logger
 msgid "Specify this amount of posts to be displayed on the statistics page top worktime chart"
 msgstr "Definiere die Anzahl der Artikel, die auf der Statistik-Seite dargestellt werden sollen. "
@@ -219,13 +219,63 @@ msgstr "Deaktiviere das Aufzeichnen der Arbeitszeit im Frontend"
 msgid "This will only affect logged in users."
 msgstr "Dies betrifft nur eingeloggte Nutzer."
 
-#: settings.php:236
+#: settings.php:258
 #@ post-worktime-logger
 msgid "Disable auto start for published posts"
 msgstr "Deaktiviere Autostart für bereits veröffentlichte Artikel"
 
-#: settings.php:372
+#: settings.php:394
 #@ post-worktime-logger
 msgid "Activate this to prevent the time from starting automatically on post editing for published posts."
 msgstr "Aktiviere dies, um das automatische Starten des Timers bei der Bearbeitung von bereits veröffentlichten Artikeln zu verhindern."
+
+#: settings.php:193
+#@ post-worktime-logger
+msgid "Current version"
+msgstr "Aktuelle Version"
+
+#: settings.php:207
+#@ post-worktime-logger
+msgid "Need Help?"
+msgstr "Brauchst du Hilfe?"
+
+#: settings.php:209
+#@ post-worktime-logger
+msgid "Do you need help or has found a bug? Please describe the problem in the support forum."
+msgstr "Brauchst du Hilfe oder hast einen Fehler gefunden? Bitte beschreibe das Problem im Support Forum."
+
+#: settings.php:211
+#@ post-worktime-logger
+msgid "Support Forum"
+msgstr "Support Forum"
+
+#: settings.php:212
+#@ post-worktime-logger
+msgid "Github"
+msgstr "Github"
+
+#: settings.php:216
+#@ post-worktime-logger
+msgid "Other Plugins"
+msgstr "Andere Plugins"
+
+#: settings.php:217
+#@ post-worktime-logger
+msgid "WP Keyword Monitor"
+msgstr "WP Keyword Monitor"
+
+#: settings.php:219
+#@ post-worktime-logger
+msgid "A powerful SEO tool to track your rankings."
+msgstr "Ein starkes SEO Tool, um deine Rackings zu überwachen."
+
+#: settings.php:224
+#@ post-worktime-logger
+msgid "Support Plugin Author"
+msgstr "Unterstütze den Plugin Autor"
+
+#: settings.php:225
+#@ post-worktime-logger
+msgid "Donate"
+msgstr "Spenden"
 

@@ -188,8 +188,9 @@ class PostWorktimeLoggerSettingsPage
     {
         $confirmMessage = __("Reset whole worktime", self::PWL_TEXT_DOMAIN).'?';
         ?>
-        <div class="wrap">
+        <div style="float: left; width:65%;"  class="wrap">
             <h1><?php echo __("Post Worktime Logger Settings", self::PWL_TEXT_DOMAIN); ?></h1>
+            <p class="description"><?php _e("Current version", PWL_TEXT_DOMAIN); echo ": ".PWL_VERSION; ?></p>
             <form class="pwl-reset-form" method="post" action="options.php">
                 <?php
                 // This prints out all hidden setting fields
@@ -201,6 +202,27 @@ class PostWorktimeLoggerSettingsPage
             <form class="pwl-reset-form" method="post" action="<?php echo admin_url( 'admin.php' ); ?>" onsubmit="return confirm('<?php echo $confirmMessage; ?>');">
                 <button name="action" value="pwlResetWholeWorktime" class="button danger"><?php _e("Reset whole worktime", self::PWL_TEXT_DOMAIN); ?></button>
             </form>
+        </div>
+        <div style="float: left; width:25%;" class="wrap">
+            <h1><?php _e("Need Help?", PWL_TEXT_DOMAIN); ?></h1>
+            <p class="description">
+                <?php _e("Do you need help or has found a bug? Please describe the problem in the support forum.", PWL_TEXT_DOMAIN); ?>
+            </p>
+            <a target="_blank" href="https://wordpress.org/support/plugin/post-worktime-logger" class="button"><?php _e("Support Forum", WP_KEYWORD_MONITOR_TEXT_DOMAIN);?></a>
+            <a target="_blank" href="https://github.com/blackus3r/post-worktime-logger/" class="button"><?php _e("Github", WP_KEYWORD_MONITOR_TEXT_DOMAIN);?></a>
+        </div>
+
+        <div style="margin-top:20px; float: left; width:25%;" class="wrap">
+            <h1><?php _e("Other Plugins", PWL_TEXT_DOMAIN); ?></h1>
+            <a target="_blank" href="https://de.wordpress.org/plugins/wp-keyword-monitor/" class="button"><?php _e("WP Keyword Monitor", WP_KEYWORD_MONITOR_TEXT_DOMAIN);?></a>
+            <p class="description">
+                <?php _e("A powerful SEO tool to track your rankings.", PWL_TEXT_DOMAIN); ?>
+            </p>
+        </div>
+
+        <div style="margin-top:20px; float: left; width:25%;" class="wrap">
+            <h1><?php _e("Support Plugin Author", PWL_TEXT_DOMAIN); ?></h1>
+            <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A" class="button"><?php _e("Donate", WP_KEYWORD_MONITOR_TEXT_DOMAIN);?></a>
         </div>
         <?php
     }

@@ -86,6 +86,11 @@ You can donate to this project via
 
 ## Changelog
 
+### 1.5.2
+* Improved settings page.
+* Implemented support to show current version number in settings page.
+* Fixed some warning messages.
+
 ### 1.5.1 
 * Fixed check to disable the widget on the static front page.
 * Fixed typo.
