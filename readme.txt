@@ -3,8 +3,8 @@ Contributors: filme-blog
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 Tags: worktime, work, clock, time, time-tracking, tracking, Zeiterfassung, worktime logger, post work time, working time, Stunden, Uhr, Timer
 Requires at least: 2.3.1
-Tested up to: 4.6
-Stable tag: 1.5.2
+Tested up to: 5.1
+Stable tag: 1.5.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -45,6 +45,9 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 You can donate to this project via PayPal by visiting this page: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=28WZAXQDXYZ5A
 
 == Changelog ==
+
+= 1.5.3 =
+* Tested plugin compatibility with wordpres 5.1
 
 = 1.5.2 =
 * Improved settings page.
