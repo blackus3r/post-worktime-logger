@@ -58,7 +58,13 @@ svn propset svn:ignore "deploy.sh
 README.md
 .git
 .idea
-.gitignore" "$SVNPATH/trunk/"
+.gitignore
+readme.md
+composer.json
+composer.lock
+docker-compose.yml
+Dockerfile
+ruleset.xml" "$SVNPATH/trunk/"
 
 echo "Moving assets-wp-repo"
 mkdir $SVNPATH/assets/
