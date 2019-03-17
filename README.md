@@ -32,7 +32,7 @@ In the plugin settings you can edit the title of the plugin, and enable or disab
 
 Post Worktime Logger will add a new interactive box to your edit screen, allowing you to keep track of how much time you spend on your alterations:
 
-![meta_box](screenshots/screenshot-1.png)
+![meta_box](assets-wp-repo/screenshot-1.png)
 
 You may stop the current counting whenever you need to do something else, or reset it altogether, for example, if you want to restart your work from scratch.
 
@@ -40,19 +40,19 @@ You may stop the current counting whenever you need to do something else, or res
 
 The plugin changes your post list, granting you an additional column that shows the time spent on any particular post:
 
-![list](screenshots/screenshot-2.png)
+![list](assets-wp-repo/screenshot-2.png)
 
 ### Statistics
 
 The plugin also offers an indicator that allows you to know which articles you spent more time working on. To check it, just go to your dashboard, it will be the first option under the plugin entry in the sidebar:
 
-![statistics](screenshots/screenshot-6.png)
+![statistics](assets-wp-repo/screenshot-6.png)
 
 ### Plugin Widget
 
 Post Worktime Logger will let you add a configurable widget to your site, similar to the meta box on the Edit Post screen:
 
-![site](screenshots/screenshot-4.png)
+![site](assets-wp-repo/screenshot-4.png)
 
 You are able to choose its display name, and whether the widget will be exposed or not to non-logged visitors.
 
