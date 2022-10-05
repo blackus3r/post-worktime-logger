@@ -1,4 +1,3 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ec1ee9f6188548b1b2694e7ce3298399)](https://www.codacy.com/app/patrick-hausmann/post-worktime-logger?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=blackus3r/post-worktime-logger&amp;utm_campaign=Badge_Grade)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/blackus3r/post-worktime-logger.svg)](http://isitmaintained.com/project/blackus3r/post-worktime-logger "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/blackus3r/post-worktime-logger.svg)](http://isitmaintained.com/project/blackus3r/post-worktime-logger "Percentage of issues still open")
 
@@ -122,29 +121,29 @@ You can donate to this project via
 * Implemented a statistics page to show the top 25 posts (worktime).
 * Improved documentation of the plugin.
 
-###1.2.2
+### 1.2.2
 * Fixed a bug, that no worktime was saved anymore in admin area.
 
-###1.2.1
+### 1.2.1
 * Added language pr_BR
 * Fixed typos
 * Fixed loading text languages
 * Added notice that this plugin is maintained on Github.
 
-###1.2.0
+### 1.2.0
 * Implemented a frontend widget to display worktime for not logged in users and for logged in users the control box to track the worktime.
 * Improved security for the plugin.
 * Made the code more reuseable.
 * Fixed textdomain for strings.
 * Updated german translation.
 
-###1.1.0
+### 1.1.0
 * Implemented support to pause and resume the tracking of the work time.
 * Implemented support to reset the working time of a post.
 * Implemented support for a sortable column on posts page, which displays the total worktime for each post.
 * Added languages fr_Be and sq.
 
-###1.0.0
+### 1.0.0
 * First Version
 
 ## Development Setup
